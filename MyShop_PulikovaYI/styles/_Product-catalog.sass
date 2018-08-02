@@ -1,0 +1,237 @@
+/* product-catalog page START*/
+.prod-catalog .content-box
+  display: flex
+  margin-top: 59px
+
+.left-part
+  flex: 1
+  margin-right: 45px
+
+.right-part
+  flex: 3
+
+.sort-products summary::-webkit-details-marker
+  display: none
+
+.sort-products summary
+  color: #6f6e6e
+  font-size: 14px
+  font-weight: 700
+  text-transform: uppercase
+  padding: 12px 6px 14px 11px
+  border-bottom: 1px solid #ebebeb
+  border-left: 5px solid #ef5b70
+  margin-bottom: 10px
+  outline: none
+
+.sort-products summary:hover
+  color: #ef5b70
+
+.sort-products summary::after
+  content: '\25BC'
+  float: right
+  font-size: 10px
+
+details[open] > summary::after
+  content: '\25B2'
+
+.sort-products-opened
+  font-size: 14px
+  font-weight: 400
+  line-height: 33px
+  text-transform: capitalize
+  text-decoration: none
+  margin-left: -25px
+
+.sort-products-opened a
+  text-decoration: none
+  color: #6f6e6e
+
+.sort-products-opened ul
+  padding-bottom: 25px
+
+.right-part .product-options
+  display: flex
+  justify-content: space-between
+  color: #6f6e6e
+  font-size: 14px
+  font-weight: 400
+  line-height: 26px
+
+.trending-option,
+.size-option,
+.price-option
+  flex: 1
+
+.trending-option h3,
+.size-option h3,
+.price-option h3
+  color: #6f6e6e
+  font-size: 14px
+  font-weight: 700
+  line-height: 20px
+  text-transform: uppercase
+
+.trending-option,
+.size-option
+  margin-right: 40px
+
+.trending-option-value
+  margin-top: 25px
+
+.trending-option-value a
+  text-decoration: none
+  color: #6f6e6e
+
+.trending-option-value span
+  color: #dfdfdf
+  padding-left: 10px
+  padding-right: 10px
+
+.size-option form
+  margin-top: 25px
+
+.size-option label
+  padding-right: 15px
+
+.size-option span
+  display: inline-block
+  width: 25px
+  padding-right: 5px
+
+.size-option input[type=checkbox]
+  border: 1px solid #ebebeb
+  box-sizing: border-box
+  background-color:  #ffffff
+  width: 13px
+  height: 13px
+
+
+.price-option hr
+  margin-top: 25px
+  width: 260px
+  background-color: #e8e8e8
+  height: 6px
+  border: none
+  border-radius: 3px
+
+.price-scale
+  display: flex
+  justify-content: space-between
+  margin-top: 20px
+
+.left-sort-products
+  margin-top: 40px
+  background-color: #f3f3f3
+
+.left-sort-products form
+  padding: 10px
+  box-sizing: border-box
+
+.left-sort-products input
+  outline-color: #f16d7f
+
+.left-sort-products label,
+.left-sort-products input
+  border: 1px solid #ebebeb
+  background-color: #ffffff
+  padding: 9px
+  color: #6f6e6e
+  font-size: 14px
+  font-weight: 400
+
+.left-sort-products .sort-by-year
+  width: 50px
+
+.product-catalog
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  margin-top: 48px
+
+.product-catalog .good-box
+  margin-right: 5px
+  margin-left: 5px
+  margin-bottom: 40px
+  max-width: 263px
+
+.product-catalog-bottom-nav
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.product-catalog-bottom-nav .pagination
+  border-radius: 3px
+  border: 1px solid #ebebeb
+  padding: 16px
+
+.product-catalog-bottom-nav .pagination a,
+.product-catalog-bottom-nav .pagination span
+  margin: 0 7px
+  color: #c4c4c4
+  font-size: 16px
+  font-weight: bolder
+  text-decoration: none
+
+a.button-view-all
+  display: block
+  border-radius: 3px
+  border: 1px solid #ef5b70
+  background-color: #ffffff
+  padding: 15px 46px
+  font-size: 16px
+  font-weight: bold
+  text-decoration: none
+  color: #ef5b70
+  transition: background-color 0.2s linear, border-color 0.2s linear, color 0.4s linear
+
+.special-offer-short
+  background-color: #222224
+  margin-top: 110px
+
+.special-offer-short .content-box
+  display: flex
+  justify-content: space-between
+
+.conditions-short
+  margin-top: 89px
+  margin-bottom: 114px
+  color: #fbfbfb
+  flex: 1
+
+.conditions-short-img
+  margin: 0 auto
+  width: 45px
+  height: 45px
+
+.conditions-short h2
+  font-size: 20px
+  font-weight: 700
+  text-align: center
+
+.conditions-short p
+  font-size: 14px
+  font-weight: 300
+  text-align: center
+
+/* product-catalog page hovers-trsnsforms*/
+.sort-products-opened a:hover,
+.trending-option-value a:hover
+  text-decoration: underline
+  color: #ef5b70
+
+.product-catalog-bottom-nav .pagination a:hover
+  color: #ef5b70
+
+a.button-view-all:hover
+  background-color: #ef5b70
+  color: #ffffff
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.16)
+
+a.button-view-all:active
+  box-shadow: 1px 3px 3px 3px rgba(0, 0, 0, 0.16)
+  color: #ffffff
+  background-color: #e1e1e1
+  border-color: #e1e1e1
+
+/* product-catalog page END*/
