@@ -100,33 +100,34 @@ details[open] > summary::after {
   display: block;
   position: relative;
   z-index: 10;
-  margin-top: -2px;
-  width: 262px;
+  margin-top: 0;
+  width: 260px;
   border-radius: 5px;
   box-shadow: 1px 3px 4px 0 rgba(0, 0, 0, 0.16);
   background-color: #ffffff;
   text-align: left;
-  opacity: 0.97;
+  opacity: 0.96;
   padding-bottom: 5px;
   padding-top: 5px; }
 
 .browse-open span {
   color: #232323;
   font-size: 14px;
-  font-weight: 400;
-  padding-left: 15px; }
+  font-weight: 600;
+  padding-left: 15px;
+  text-transform: uppercase; }
 
 .browse-open hr {
   background-color: #e8e8e8;
-  height: 1px;
-  width: 236px;
+  height: 2px;
+  width: 230px;
   border: none;
-  margin-top: -3px; }
+  margin-top: 0; }
 
-.browse-open li {
+.browse-open ul li {
   font-size: 14px;
   font-weight: 400;
-  line-height: 27px; }
+  line-height: 22px; }
 
 .serach {
   display: flex;
@@ -541,7 +542,8 @@ details[open] > summary::after {
   margin-right: 10px;
   margin-left: 10px;
   margin-bottom: 40px;
-  max-width: 263px; }
+  max-width: 263px;
+  transition: all 0.5s linear; }
 
 .good-static {
   position: relative;
@@ -556,7 +558,7 @@ details[open] > summary::after {
   height: 282px;
   background-color: rgba(58, 56, 56, 0.83);
   opacity: 0.3;
-  transition: opacity 0.7s linear; }
+  transition: all 0.7s linear; }
 
 .good-to-cart {
   display: none;
@@ -579,9 +581,9 @@ details[open] > summary::after {
   font-size: 14px;
   font-weight: 700;
   padding: 10px 20px 8px 12px;
-  transition: background-color 0.2s linear; }
+  transition: background-color 0.3s linear; }
 
-.good-description-link a {
+.good-url {
   display: block;
   text-decoration: none;
   min-height: 83px;
@@ -619,29 +621,36 @@ details[open] > summary::after {
 .comments-subscribe {
   max-width: 1600px;
   min-width: 1140px;
+  height: 380px;
   background: url(../images/layer-41.png) center no-repeat;
   background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../images/Layer-41.png);
-  margin: 0 auto;
-  margin-bottom: 109px; }
+  margin: 0 auto; }
 
 .comments-subscribe-box {
   display: flex;
   position: relative; }
 
+#comments-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1;
+  height: 380px; }
+
 .comments {
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
   flex: 1;
-  height: 100%;
-  border-right: 1px solid #e1e1e1;
-  padding-top: 110px;
-  padding-bottom: 128px; }
+  height: 380px;
+  border-right: 1px solid #e1e1e1; }
 
 .comments-img {
-  margin-right: 28px;
-  margin-top: 12px; }
+  margin-left: 10px;
+  margin-top: -50px; }
 
 .comments-txt {
-  margin-right: 72px; }
+  margin: 0 5%; }
 
 .comments-txt p {
   color: rgba(34, 34, 36, 0.67);
@@ -668,13 +677,15 @@ details[open] > summary::after {
   border-bottom: 4px solid #d6d6d6;
   margin-right: 13px; }
 
+.slider-nav span:hover {
+  cursor: pointer; }
+
 .subcscribe {
   flex: 1;
-  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding-top: 148px;
   box-sizing: border-box; }
 
 .subcscribe h2 {
@@ -730,8 +741,8 @@ details[open] > summary::after {
 /*comments-subscribe - END */
 /*footer - first part - START */
 .footer-navigation {
-  margin-top: 112px;
-  margin-bottom: 73px; }
+  margin-top: 100px;
+  margin-bottom: 70px; }
 
 .footer-navigation .logo img {
   margin: 0; }
@@ -746,11 +757,11 @@ details[open] > summary::after {
 
 .company {
   flex: 1;
-  margin-left: 60px; }
+  margin-left: 80px; }
 
 .information {
   flex: 1;
-  margin-left: 30px; }
+  margin-left: 20px; }
 
 .shop-category {
   flex: 1;
@@ -774,7 +785,7 @@ details[open] > summary::after {
   color: #898989;
   font-size: 14px;
   font-weight: 300;
-  line-height: 24px; }
+  line-height: 20px; }
 
 .company a,
 .information a,
@@ -834,6 +845,9 @@ details[open] > summary::after {
   vertical-align: middle; }
 
 /*footer - all parts - FINISH */
+.hide-element {
+  display: none; }
+
 /*main-poster - START */
 .main-poster {
   background-color: #e8e8e8;
@@ -882,7 +896,7 @@ details[open] > summary::after {
   text-decoration: none; }
 
 .promo-goods-text {
-  width: fit-content;
+  width: 35%;
   background-color: #ffffff;
   padding: 15px 20px; }
 
@@ -931,11 +945,8 @@ details[open] > summary::after {
 
 /*main-promo-goods - END */
 /*main-goods - START */
-.main-goods-catalog {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap; }
+.main-goods {
+  margin: 0 auto; }
 
 .main-goods h4 {
   font-size: 30px;
@@ -949,6 +960,12 @@ details[open] > summary::after {
   font-weight: 400;
   text-align: center;
   margin-bottom: 58px; }
+
+.main-goods-catalog {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap; }
 
 a.browse-all-prod-button {
   display: block;

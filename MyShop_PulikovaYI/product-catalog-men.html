@@ -3,13 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Products catalog</title>
+    <title>Men catalog</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.css">
     <link rel="stylesheet" href="styles/style-main.css">
-    <!-- connecting FontAwesome library -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+
+    <script async type="text/javascript" src="vendor/js/jq.js"></script>
+    <script async type="text/javascript" src="js/dto.js"></script>
+    <script async type="text/javascript" src="js/NavRender.js"></script>
+    <script async type="text/javascript" src="js/GoodsView.js"></script>
+    <script async type="text/javascript" src="js/js.js"></script>
 </head>
 
 <body>
@@ -18,37 +23,12 @@
         <header class="header">
             <div class="content-box">
                 <div class="header-left">
-                    <a class="logo" href="index.html"><img src="images/logo.png" alt="logo">BRAN<span>D</span></a>
+                    <a class="logo" href="index.html">
+                        <img src="images/logo.png" alt="logo">BRAN<span>D</span>
+                    </a>
                     <details class="browse">
                         <summary>Browse</summary>
-                        <div class="browse-open"><span>WOMEN</span>
-                            <hr>
-                            <ul>
-                                <li><a href="#">Dresses</a></li>
-                                <li><a href="#">Tops</a></li>
-                                <li><a href="#">Sweaters/Knits</a></li>
-                                <li><a href="#">Jackets/Coats</a></li>
-                                <li><a href="#">Blazers</a></li>
-                                <li><a href="#">Denim</a></li>
-                                <li><a href="#">Leggings/Pants</a></li>
-                                <li><a href="#">Skirts/Shorts</a></li>
-                                <li><a href="#">Accessories</a></li>
-                                <li><a href="#">Bags/Purses</a></li>
-                                <li><a href="#">Swimwear/Underwear</a></li>
-                                <li><a href="#">Nightwear</a></li>
-                                <li><a href="#">Shoes</a></li>
-                                <li><a href="#">Beauty</a></li>
-                            </ul>
-                            <span>MEN</span>
-                            <hr>
-                            <ul>
-                                <li><a href="#">Tees/Tank tops</a></li>
-                                <li><a href="#">Shirts/Polos</a></li>
-                                <li><a href="#">Sweaters</a></li>
-                                <li><a href="#">Sweatshirts/Hoodies</a></li>
-                                <li><a href="#">Blazers</a></li>
-                                <li><a href="#">Jackets/vests</a></li>
-                            </ul>
+                        <div id="browse-items" class="browse-open">
                         </div>
                     </details>
                     <form class="serach" action="#">
@@ -58,9 +38,9 @@
                 </div>
                 <div class="header-right">
                     <div class="cart shake-bottom">
-                        <div class="number-of-goods"><span>2</span></div>
-                        <a href="#"><img src="images/cart.svg" alt="cart"></a>
-
+                        <a href="#">
+                            <div class="number-of-goods"><span>2</span></div>
+                            <img src="images/cart.svg" alt="cart"></a>
                         <div class="traingle-cart"></div>
                         <div class="cart-menu">
                             <div class="good-in-cart">
@@ -116,119 +96,22 @@
                 </div>
             </div>
         </header>
+
         <nav>
-            <ul class="navigation">
-                <li><a href="index.html">Home</a></li>
-                <li><a class="active-link" href="product-catalog.html">Men</a>
-                    <div class="traingle-mega-menu"></div>
-                    <div class="mega-menu">
-                        <div class="mega-menu-column">
-                            <h3>MEN</h3>
-                            <ul>
-                                <li><a href="#">Dresses</a></li>
-                                <li><a href="#">Tops</a></li>
-                                <li><a href="#">Sweaters/Knits</a></li>
-                                <li><a href="#">Jackets/Coats</a></li>
-                                <li><a href="#">Blazers</a></li>
-                                <li><a href="#">Denim</a></li>
-                                <li><a href="#">Leggings/Pants</a></li>
-                                <li><a href="#">Skirts/Shorts</a></li>
-                                <li><a href="#">Accessories </a></li>
-                            </ul>
-                        </div>
-                        <div class="mega-menu-column">
-                            <h3>MEN</h3>
-                            <ul>
-                                <li><a href="#">Tees/Tank tops</a></li>
-                                <li><a href="#">Shirts/Polos</a></li>
-                                <li><a href="#">Sweaters</a></li>
-                                <li><a href="#">Blazers</a></li>
-                            </ul>
-                            <div class="mega-menu-special-offer">
-                                <a href="#"><img class="slide-in-fwd-center" src="images/mega-menu-special-offer.jpg" alt="mega-menu-special-offer"><span class="heartbeat">Super<br>sale!</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li><a href="#">Women</a>
-                    <div class="traingle-mega-menu"></div>
-                    <div class="mega-menu">
-                        <div class="mega-menu-column">
-                            <h3>WOMEN</h3>
-                            <ul>
-                                <li><a href="#">Dresses</a></li>
-                                <li><a href="#">Tops</a></li>
-                                <li><a href="#">Sweaters/Knits</a></li>
-                                <li><a href="#">Jackets/Coats</a></li>
-                                <li><a href="#">Blazers</a></li>
-                                <li><a href="#">Denim</a></li>
-                                <li><a href="#">Leggings/Pants</a></li>
-                                <li><a href="#">Skirts/Shorts</a></li>
-                                <li><a href="#">Accessories </a></li>
-                            </ul>
-                        </div>
-                        <div class="mega-menu-column">
-                            <h3>Women</h3>
-                            <ul>
-                                <li><a href="#">Bags/Purses</a></li>
-                                <li><a href="#">Swimwear/Underwear</a></li>
-                                <li><a href="#">Nightwear</a></li>
-                                <li><a href="#">Shoes</a></li>
-                                <li><a href="#">Beauty</a></li>
-                            </ul>
-                            <h3>Women</h3>
-                            <ul>
-                                <li><a href="#">new arrivals</a></li>
-                            </ul>
-                        </div>
-                        <div class="mega-menu-column">
-                            <h3>Women</h3>
-                            <ul>
-                                <li><a href="#">Dresses</a></li>
-                                <li><a href="#">Tops</a></li>
-                                <li><a href="#">Sweaters/Knits</a></li>
-                                <li><a href="#">Jackets/Coats</a></li>
-                            </ul>
-                            <div class="mega-menu-special-offer">
-                                <a href="#"><img class="slide-in-fwd-center" src="images/mega-menu-special-offer.jpg" alt="mega-menu-special-offer"><span class="heartbeat">Super<br>sale!</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li><a href="#">Kids</a>
-                    <div class="traingle-mega-menu"></div>
-                    <div class="mega-menu">
-                        <div class="mega-menu-column">
-                            <h3>KIDS</h3>
-                            <ul>
-                                <li><a href="#">Dresses</a></li>
-                                <li><a href="#">Tops</a></li>
-                                <li><a href="#">Sweaters/Knits</a></li>
-                                <li><a href="#">Jackets/Coats</a></li>
-                                <li><a href="#">Blazers</a></li>
-                                <li><a href="#">Denim</a></li>
-                                <li><a href="#">Leggings/Pants</a></li>
-                                <li><a href="#">Skirts/Shorts</a></li>
-                                <li><a href="#">Accessories </a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                <li><a href="#">accessories</a></li>
-                <li><a href="#">Featured</a></li>
-                <li><a href="#">Hot Deals</a></li>
-            </ul>
+            <ul id="header-navigation" class="header-navigation"></ul>
         </nav>
+
         <div class="breadcrumbs-block">
             <div class="content-box">
                 <h2>New Arrivals </h2>
                 <div class="breadcrumbs-links">
                     <a href="index.html">Home</a> /
-                    <a href="product-catalog.html">Men</a> /
+                    <a href="product-catalog-men.html">Men</a> /
                     <a href="#">New Arrivals</a>
                 </div>
             </div>
         </div>
+
         <section class="prod-catalog">
             <div class="content-box">
                 <div class="left-part">
@@ -348,123 +231,29 @@
                         </form>
                     </div>
                     <div class="product-catalog">
-                        <div class="good-box">
-                            <div class="good-static"><img src="images/products/MenCatalog1.jpg" alt="MenCatalog1">
-                                <div class="good-hover">
-                                    <div class="good-to-cart">
-                                        <a href="#"><img src="images/cart-icon-good-box.svg" alt="cart-icon-good-box">Add to&nbsp;Cart</a>
+
+                        <!-- Template for good-box rendering -->
+                        <div id="template" class="template-hide">
+                            <div class="good-box">
+                                <div class="good-static"><img class="good-image" src="images/good-catalog-background.jpg" alt="Template">
+                                    <div class="good-hover">
+                                        <div class="good-to-cart">
+                                            <a href="#"><img src="images/cart-icon-good-box.svg" alt="cart-icon-good-box">Add to&nbsp;Cart</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="good-description-link"><a href="#">
-                                <h2>Mango People T-shirt</h2>
-                                <h3>$52.00</h3></a>
-                            </div>
-                        </div>
-                        <div class="good-box">
-                            <div class="good-static"><img src="images/products/MenCatalog5.jpg" alt="MenCatalog5">
-                                <div class="good-hover">
-                                    <div class="good-to-cart">
-                                        <a href="#"><img src="images/cart-icon-good-box.svg" alt="cart-icon-good-box">Add to&nbsp;Cart</a>
+                                <a class='good-url' href="#">
+                                    <div class="good-description-link">
+                                        <h2 class="good-title"></h2>
+                                        <h3>$ <span class="good-price"> </span></h3>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="good-description-link"><a href="#">
-                                <h2>Mango People T-shirt</h2>
-                                <h3>$52.00</h3></a>
+                                </a>
                             </div>
                         </div>
-                        <div class="good-box">
-                            <div class="good-static"><img src="images/products/MenCatalog8.jpg" alt="MenCatalog8">
-                                <div class="good-hover">
-                                    <div class="good-to-cart">
-                                        <a href="#"><img src="images/cart-icon-good-box.svg" alt="cart-icon-good-box">Add to&nbsp;Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="good-description-link"><a href="#">
-                                <h2>Mango People T-shirt Mango People T-shirt Mango People</h2>
-                                <h3>$152.00</h3></a>
-                            </div>
-                        </div>
-                        <div class="good-box">
-                            <div class="good-static"><img src="images/products/MenCatalog7.jpg" alt="MenCatalog7">
-                                <div class="good-hover">
-                                    <div class="good-to-cart">
-                                        <a href="#"><img src="images/cart-icon-good-box.svg" alt="cart-icon-good-box">Add to&nbsp;Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="good-description-link"><a href="#">
-                                <h2>Mango People T-shirt</h2>
-                                <h3>$52.00</h3></a>
-                            </div>
-                        </div>
-                        <div class="good-box">
-                            <div class="good-static"><img src="images/products/MenCatalog6.jpg" alt="MenCatalog6">
-                                <div class="good-hover">
-                                    <div class="good-to-cart">
-                                        <a href="#"><img src="images/cart-icon-good-box.svg" alt="cart-icon-good-box">Add to&nbsp;Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="good-description-link"><a href="#">
-                                <h2>Mango People T-shirt</h2>
-                                <h3>$52.00</h3></a>
-                            </div>
-                        </div>
-                        <div class="good-box">
-                            <div class="good-static"><img src="images/products/MenCatalog2.jpg" alt="MenCatalog2">
-                                <div class="good-hover">
-                                    <div class="good-to-cart">
-                                        <a href="#"><img src="images/cart-icon-good-box.svg" alt="cart-icon-good-box">Add to&nbsp;Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="good-description-link"><a href="#">
-                                <h2>Mango People T-shirt</h2>
-                                <h3>$52.00</h3></a>
-                            </div>
-                        </div>
-                        <div class="good-box">
-                            <div class="good-static"><img src="images/products/MenCatalog3.jpg" alt="MenCatalog3">
-                                <div class="good-hover">
-                                    <div class="good-to-cart">
-                                        <a href="#"><img src="images/cart-icon-good-box.svg" alt="cart-icon-good-box">Add to&nbsp;Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="good-description-link"><a href="#">
-                                <h2>Mango People T-shirt</h2>
-                                <h3>$52.00</h3></a>
-                            </div>
-                        </div>
-                        <div class="good-box">
-                            <div class="good-static"><img src="images/products/MenCatalog4.jpg" alt="MenCatalog4">
-                                <div class="good-hover">
-                                    <div class="good-to-cart">
-                                        <a href="#"><img src="images/cart-icon-good-box.svg" alt="cart-icon-good-box">Add to&nbsp;Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="good-description-link"><a href="#">
-                                <h2>Mango People T-shirt Mango People T-shirt Mango People Mango People</h2>
-                                <h3>$52.00</h3></a>
-                            </div>
-                        </div>
-                        <div class="good-box">
-                            <div class="good-static"><img src="images/products/MenCatalog9.jpg" alt="MenCatalog9">
-                                <div class="good-hover">
-                                    <div class="good-to-cart">
-                                        <a href="#"><img src="images/cart-icon-good-box.svg" alt="cart-icon-good-box">Add to&nbsp;Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="good-description-link"><a href="#">
-                                <h2>Mango People T-shirt</h2>
-                                <h3>$52.00</h3></a>
-                            </div>
-                        </div>
+
+                        <!-- container for JS-goods-rendering-->
+                        <div id="products" class="main-goods-catalog" data-category="Men"></div>
+
                     </div>
                     <div class="product-catalog-bottom-nav">
                         <div class="pagination">
@@ -483,6 +272,7 @@
                 </div>
             </div>
         </section>
+
         <section class="special-offer-short">
             <div class="content-box">
                 <div class="conditions-short">
@@ -544,7 +334,7 @@
                     <br> <a href="#">How to&nbsp;Sell</a>
                     <br> <a href="#">Promotion</a> </div>
                 <div class="shop-category">
-                    <h2>SHOP CATEGORY</h2> <a href="product-catalog.html">Men</a>
+                    <h2>SHOP CATEGORY</h2> <a href="product-catalog-men.html">Men</a>
                     <br> <a href="#">Women</a>
                     <br> <a href="#">Kids</a>
                     <br> <a href="#">Apparel</a>

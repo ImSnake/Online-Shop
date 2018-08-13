@@ -1,21 +1,30 @@
 "use strict";
 
 /** NavRender: class создание навигационного меню сайта
- * @param {object} menu объект-DTO c картой меню
- * @param {number} subColumns счетчик для элементов меню 3-го уровня, контроль длины меню 2-го уровня
- * @param {HTMLElement} container элемент для
+ * @param {[object]} menu данные о структуре меню
+ * @param {number} subColumns счетчик отрисованных элементов 3-го уровня в колонках (mega-menu-column) .
  */
 class NavRender {
-    constructor(menu, className) {
+    constructor(menu) {
         this.menu = menu;
         this.subColumns = 0;
-        this.container = document.getElementsByClassName(className)[0];
     }
 
-    /** getMenu метод для отрисовки навигационного меню
-     * Запускает методы для отрисовки меню и передает данные в DOM
+    /** getBrowse запуск методов отрисовки хедер browse (details)
      */
-    getMenu() {
+    getBrowse(elem){
+        let browseHTML = '';
+        for (let i = 0; i < this.menu.length; i++){
+            if (this.menu[i].hasOwnProperty('items')){
+                browseHTML += `<span>${this.menu[i].name}</span><hr><ul>${this.renderSubMenu(this.menu[i].items)}</ul>`;
+            }
+        }
+        document.getElementById(elem).innerHTML = browseHTML;
+    }
+
+    /** getMenu запуск методов отрисовки навигационного меню
+     */
+    getMenu(elem) {
         let navHTML = '';
         for (let i = 0; i < this.menu.length; i++) {
             this.subColumns = 0;
@@ -25,45 +34,38 @@ class NavRender {
             }
             navHTML += `</li>`;
         }
-        this.container.innerHTML = navHTML;
+        document.getElementById(elem).innerHTML = navHTML;
     }
 
     /** getSubMenu метод создает контейнер со стилями для меню 2-го уровня,
      * находит и отделят элементы меню 3-го уровня
-     * разделяет меню 3-го уровня на колонки в зависисмости от длины элементов списка
+     * разделяет меню 3-го уровня на колонки в зависисмости от длины элементов
      * @param {object} subMenu обект с данными о меню 2 и 3-го уровней
      * @return {string} все элементы и стили меню 2 и 3-го уровней
      */
     getSubMenu(subMenu) {
-        let sub = `<div class="traingle-mega-menu"></div><div class="mega-menu"><div class="mega-menu-column">`;
+        let sub2 = `<div class="traingle-mega-menu"></div><div class="mega-menu"><div class="mega-menu-column">`;
         for (let i = 0; i < subMenu.length; i++) {
-            let subTitle = Object.getOwnPropertyNames(subMenu[i]).sort();
-            if (this.subColumns >= 8) {
-                sub += `</div><div class="mega-menu-column">`;
+            if (this.subColumns >= 7) {
+                sub2 += `</div><div class="mega-menu-column">`;
                 this.subColumns = 0;
             }
-            sub += `<h3>${subTitle}</h3><ul>${this.renderSubMenu(subMenu[i], subTitle)}</ul>`;
+            sub2 += `<h3>${subMenu[i].name}</h3><ul>${this.renderSubMenu(subMenu[i].subItems)}</ul>`;
         }
-        sub += `</div></div>`;
-        return sub;
+        sub2 += `</div></div>`;
+        return sub2;
     }
 
-    /** renderSubMenu метод отрисовка одного элемента подменю
-     * @param {object} subItem объект подменю: заголовок + список
-     * @param {string} prop заголовок подменю
-     * @return {string} subMenu элкменты меню 3-го уровня
+    /** renderSubMenu метод отрисовки элемента меню 3-го уровня со счетчиком кол-ва отрисованных элементов
+     * @param {object} subItem элементы 3-го уровня
+     * @return {string} subMenu элементы меню 3-го уровня
      */
-    renderSubMenu(subItem, prop) {
-        let items = [], subMenu = '';
-        for (const i in subItem) {
-            if (subItem.hasOwnProperty(prop)) {
-                items = subItem[i];
-            }
+    renderSubMenu(subItem) {
+        let sub3 = '';
+        for (let i = 0; i < subItem.length; i++, this.subColumns++) {
+            sub3 += this.renderItem(subItem[i].href, subItem[i].name);
         }
-        for (let i = 0; i < items.length; i++, this.subColumns++) {
-            subMenu += this.renderItem(items[i].href, items[i].name);
-        }
-        return subMenu;
+        return sub3;
     }
 
     /** renderItem метод отрисовка одной строки списка

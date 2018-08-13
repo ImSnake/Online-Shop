@@ -355,9 +355,12 @@ details {
  */
 
 summary {
-    display: list-item;
+    display: block;
 }
 
+summary::-webkit-details-marker {
+    display: none;
+}
 /* Misc
    ========================================================================== */
 

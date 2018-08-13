@@ -13,7 +13,7 @@ class GoodsView {
 	 }
 	 render(){
 			for (let goodView, i = 0; i < this.items.length; i++ ) {
-				 goodView = new GoodView(this.items[i].title, this.items[i].price, this.items[i].imageLink);
+				 goodView = new GoodView(this.items[i].title, this.items[i].price, this.items[i].imageLink, this.items[i].productLink);
 				 this.el.appendChild(goodView.render());
 			}
 	 }
@@ -27,9 +27,10 @@ class GoodsView {
  * @return {object} el создает элемент DOM
  */
 class GoodView {
-	 constructor(title, price, imageLink) {
+	 constructor(title, price, imageLink, url) {
 			this.title = title;
 			this.price = price;
+			this.url = url;
 			this.imageLink = imageLink;
 			this.el = this.createElement();
 	 }
@@ -41,6 +42,7 @@ class GoodView {
 	 render() {
 			this.el.querySelector('.good-title').innerHTML = this.title;
 			this.el.querySelector('.good-price').innerHTML = `${this.price}.00`;
+			this.el.querySelector('.good-url').setAttribute('href', this.url);
 			this.el.querySelector('.good-image').setAttribute('src', this.imageLink);
 			return this.el;
 	 }

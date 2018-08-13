@@ -3,159 +3,146 @@
 /**
  * @type{[object]} объект с набором свойств для отрисовки главного меню
  */
-const headerNav = [
+const navItems = [
     {href: "index.html", name: "Home"},
-    {
-        href: "product-catalog.html", name: "Men", items:
-            [
-                {
-                    SHIRTS: [
-                        {href: "#", name: "Shirts"},
-                        {href: "#", name: "Polo"},
-                        {href: "#", name: "T-Shirts"},
-                        {href: "#", name: "Hoodies"},
-                    ]
-                },
-                {
-                    OUTWEAR: [
-                        {href: "#", name: "Sweaters"},
-                        {href: "#", name: "Jackets"},
-                        {href: "#", name: "Coats"},
-                        {href: "#", name: "Blazers"},
-                        {href: "#", name: "Denim"},
-                    ]
-                },
-                {
-                    PANTS: [
-                        {href: "#", name: "Shorts"},
-                        {href: "#", name: "Jeans"},
-                        {href: "#", name: "Trousers"},
-                    ]
-                },
-                {
-                    FOOTWEAR: [
-                        {href: "#", name: "Official"},
-                        {href: "#", name: "Sport"},
-                        {href: "#", name: "Casual"},
-                    ]
-                },
-            ]
-    },
-    {
-        href: "#", name: "Women", items:
-            [
-                {
-                    DRESSES: [
-                        {href: "#", name: "Short-length"},
-                        {href: "#", name: "Long-stile"},
-                        {href: "#", name: "Business"},
-                        {href: "#", name: "Casual"},
-                    ]
-                },
-                {
-                    SKIRTS: [
-                        {href: "#", name: "Mini"},
-                        {href: "#", name: "Office-skirts"},
-                        {href: "#", name: "Long-length"},
-                    ]
-                },
-                {
-                    PANTS: [
-                        {href: "#", name: "Shorts"},
-                        {href: "#", name: "Leggings"},
-                        {href: "#", name: "Jeans"},
-                        {href: "#", name: "Trousers"},
-                    ]
-                },
-                {
-                    SHIRTS: [
-                        {href: "#", name: "Shirts"},
-                        {href: "#", name: "Polo"},
-                        {href: "#", name: "T-Shirts"},
-                        {href: "#", name: "Hoodies"},
-                        {href: "#", name: "Tops"},
-                    ]
-                },
-                {
-                    OUTWEAR: [
-                        {href: "#", name: "Sweaters"},
-                        {href: "#", name: "Jackets"},
-                        {href: "#", name: "Coats"},
-                        {href: "#", name: "Blazers"},
-                        {href: "#", name: "Denim"},
-                    ]
-                },
-                {
-                    FOOTWEAR: [
-                        {href: "#", name: "Official"},
-                        {href: "#", name: "Sport"},
-                        {href: "#", name: "Casual"},
-                    ]
-                },
-            ]
-    },
-    {
-        href: "#", name: "Kids", items:
-            [
-                {
-                    BOYS: [
-                        {href: "#", name: "School"},
-                        {href: "#", name: "T-Shirts"},
-                        {href: "#", name: "Pants"},
-                        {href: "#", name: "Denim"},
-                        {href: "#", name: "Outwear"},
-                        {href: "#", name: "Sport"},
-                    ]
-                },
-                {
-                    FOOTWEAR: [
-                        {href: "#", name: "Classic"},
-                        {href: "#", name: "Sport"},
-                        {href: "#", name: "Fashion"},
-                    ]
-                },
-                {
-                    GIRLS: [
-                        {href: "#", name: "School"},
-                        {href: "#", name: "Dresses"},
-                        {href: "#", name: "Skirts"},
-                        {href: "#", name: "T-Shirts"},
-                        {href: "#", name: "Denim"},
-                        {href: "#", name: "Outwear"},
-                        {href: "#", name: "Sport"},
-                    ]
-                },
-            ]
-    },
-    {
-        href: "#", name: "Accessories", items:
-            [
-                {
-                    MEN: [
-                        {href: "#", name: "Watches"},
-                        {href: "#", name: "Glasses"},
-                        {href: "#", name: "Bags"},
-                        {href: "#", name: "Other"},
-                    ]
-                },
-                {
-                    WOMEN: [
-                        {href: "#", name: "Bags"},
-                        {href: "#", name: "Scarfs"},
-                        {href: "#", name: "Glasses"},
-                        {href: "#", name: "Jewelry"},
-                        {href: "#", name: "Other"},
-                    ]
-                },
-                {
-                    KIDS: [
-                        {href: "#", name: "Bags"},
-                        {href: "#", name: "Toys"},
-                        {href: "#", name: "Other"},
-                    ]
-                },
-            ]
-    },
+    {href: "product-catalog-men.html", name: "Men", items: [
+        {name: 'SHIRTS', href: "#", subItems:
+                [
+                    {href: "#", name: "Shirts"},
+                    {href: "#", name: "Polo"},
+                    {href: "#", name: "T-Shirts"},
+                    {href: "#", name: "Hoodies"},
+                ]
+        },
+        {name: 'OUTWEAR', href: "#", subItems:
+                [
+                    {href: "#", name: "Sweaters"},
+                    {href: "#", name: "Jackets"},
+                    {href: "#", name: "Coats"},
+                    {href: "#", name: "Blazers"},
+                    {href: "#", name: "Denim"},
+                ]
+        },
+        {name: 'PANTS', href: "#", subItems:
+                [
+                    {href: "#", name: "Shorts"},
+                    {href: "#", name: "Jeans"},
+                    {href: "#", name: "Trousers"},
+                ]
+        },
+        {name: 'FOOTWEAR', href: "#", subItems:
+                [
+                    {href: "#", name: "Official"},
+                    {href: "#", name: "Sport"},
+                    {href: "#", name: "Casual"},
+                ]
+        },
+    ]},
+    {href: "#", name: "Women", items: [
+        {name: 'DRESSES', href: "#", subItems:
+                [
+                    {href: "#", name: "Short-length"},
+                    {href: "#", name: "Long-stile"},
+                    {href: "#", name: "Business"},
+                    {href: "#", name: "Casual"},
+                ]
+        },
+        {name: 'SKIRTS', href: "#", subItems:
+                [
+                    {href: "#", name: "Mini"},
+                    {href: "#", name: "Office-skirts"},
+                    {href: "#", name: "Long-length"},
+                ]
+        },
+        {name: 'PANTS', href: "#", subItems:
+                [
+                    {href: "#", name: "Shorts"},
+                    {href: "#", name: "Jeans"},
+                    {href: "#", name: "Trousers"},
+                ]
+        },
+        {name: 'SHIRTS', href: "#", subItems:
+                [
+                    {href: "#", name: "Shirts"},
+                    {href: "#", name: "Polo"},
+                    {href: "#", name: "T-Shirts"},
+                    {href: "#", name: "Hoodies"},
+                    {href: "#", name: "Tops"},
+                ]
+        },
+        {name: 'OUTWEAR', href: "#", subItems:
+                [
+                    {href: "#", name: "Sweaters"},
+                    {href: "#", name: "Jackets"},
+                    {href: "#", name: "Coats"},
+                    {href: "#", name: "Blazers"},
+                    {href: "#", name: "Denim"},
+                ]
+        },
+        {name: 'FOOTWEAR', href: "#", subItems:
+                [
+                    {href: "#", name: "Official"},
+                    {href: "#", name: "Sport"},
+                    {href: "#", name: "Casual"},
+                ]
+        },
+    ]},
+    {href: "#", name: "Kids", items: [
+        {name: 'BOYS', href: "#", subItems:
+                [
+                    {href: "#", name: "School"},
+                    {href: "#", name: "T-Shirts"},
+                    {href: "#", name: "Pants"},
+                    {href: "#", name: "Denim"},
+                    {href: "#", name: "Outwear"},
+                    {href: "#", name: "Sport"},
+                ]
+        },
+        {name: 'FOOTWEAR', href: "#", subItems:
+                [
+                    {href: "#", name: "Classic"},
+                    {href: "#", name: "Sport"},
+                    {href: "#", name: "Fashion"},
+                ]
+        },
+        {name: 'GIRLS', href: "#", subItems:
+                [
+                    {href: "#", name: "School"},
+                    {href: "#", name: "Dresses"},
+                    {href: "#", name: "Skirts"},
+                    {href: "#", name: "T-Shirts"},
+                    {href: "#", name: "Denim"},
+                    {href: "#", name: "Outwear"},
+                    {href: "#", name: "Sport"},
+                ]
+        },
+    ]},
+    {href: "#", name: "Accessories", items: [
+        {name: 'MEN', href: "#", subItems:
+                [
+                    {href: "#", name: "Watches"},
+                    {href: "#", name: "Glasses"},
+                    {href: "#", name: "Bags"},
+                    {href: "#", name: "Other"},
+                ]
+        },
+        {name: 'WOMEN', href: "#", subItems:
+                [
+                    {href: "#", name: "Bags"},
+                    {href: "#", name: "Scarfs"},
+                    {href: "#", name: "Glasses"},
+                    {href: "#", name: "Jewelry"},
+                    {href: "#", name: "Other"},
+                ]
+        },
+        {name: 'KIDS', href: "#", subItems:
+                [
+                    {href: "#", name: "Bags"},
+                    {href: "#", name: "Toys"},
+                    {href: "#", name: "Other"},
+                ]
+        },
+    ]},
     {href: "#", name: "Featured"},
     {href: "#", name: "Hot Deals"},
 ];
@@ -165,7 +152,18 @@ const headerNav = [
  */
 const products = [
     {
+        productID: '111119',
+        productLink: "single-good-card.html",
+        category: 'Women',
+        productType: 'Trousers',
+        title: 'New fashion trousers by Tom Tailor',
+        price: 199,
+        imageLink: 'images/products/good-9.jpg',
+        specialOffer: false,
+    },
+    {
         productID: '111111',
+        productLink: '#',
         category: 'Men',
         productType: 'T-shirt',
         title: 'Mango People T-shirt',
@@ -175,6 +173,7 @@ const products = [
     },
     {
         productID: '111112',
+        productLink: '#',
         category: 'Women',
         productType: 'Shirts',
         title: 'Mango People Shirt',
@@ -184,6 +183,7 @@ const products = [
     },
     {
         productID: '111113',
+        productLink: '#',
         category: 'Men',
         productType: 'Jackets',
         title: 'Mango People Jacket',
@@ -193,6 +193,7 @@ const products = [
     },
     {
         productID: '111114',
+        productLink: '#',
         category: 'Women',
         productType: 'T-shirts',
         title: 'Mango People T-shirt',
@@ -202,6 +203,7 @@ const products = [
     },
     {
         productID: '111115',
+        productLink: '#',
         category: 'Women',
         productType: 'Shirts',
         title: 'Some New Brand Shirt Last Season',
@@ -211,6 +213,7 @@ const products = [
     },
     {
         productID: '111116',
+        productLink: '#',
         category: 'Men',
         productType: 'Jackets',
         title: 'Mango People Jacket',
@@ -220,6 +223,7 @@ const products = [
     },
     {
         productID: '111117',
+        productLink: '#',
         category: 'Men',
         productType: 'Skirts',
         title: 'Mango People Skirts',
@@ -229,6 +233,7 @@ const products = [
     },
     {
         productID: '111118',
+        productLink: '#',
         category: 'Men',
         productType: 'Denim',
         title: 'Some New Brand Denim Last Collection',
@@ -237,16 +242,8 @@ const products = [
         specialOffer: false,
     },
     {
-        productID: '111119',
-        category: 'Women',
-        productType: 'Trousers',
-        title: 'New fashion trousers by Tom Tailor',
-        price: 199,
-        imageLink: 'images/products/good-9.jpg',
-        specialOffer: false,
-    },
-    {
         productID: '111120',
+        productLink: '#',
         category: 'Men',
         productType: 'Jackets',
         title: 'Casual warm winter jacket',
@@ -256,6 +253,7 @@ const products = [
     },
     {
         productID: '111121',
+        productLink: '#',
         category: 'Men',
         productType: 'Coats',
         title: 'Coat fashion new look by TrussardiCo',
@@ -265,6 +263,7 @@ const products = [
     },
     {
         productID: '111122',
+        productLink: '#',
         category: 'Men',
         productType: 'T-shirts',
         title: 'New look elegant t-shirt',
@@ -274,6 +273,7 @@ const products = [
     },
     {
         productID: '111123',
+        productLink: '#',
         category: 'Men',
         productType: 'Coats',
         title: 'Gothic style warm outwear coat',
@@ -283,6 +283,7 @@ const products = [
     },
     {
         productID: '111124',
+        productLink: '#',
         category: 'Men',
         productType: 'Jackets',
         title: 'Warm jacket by Tommy official and casual stile',
@@ -292,6 +293,7 @@ const products = [
     },
     {
         productID: '111125',
+        productLink: '#',
         category: 'Men',
         productType: 'T-shirts',
         title: 'New look casual cotton t-shirt',
@@ -301,6 +303,7 @@ const products = [
     },
     {
         productID: '111126',
+        productLink: '#',
         category: 'Women',
         productType: 'Leggings',
         title: 'Fit and cute stretch-leggings',
@@ -310,6 +313,7 @@ const products = [
     },
     {
         productID: '111127',
+        productLink: '#',
         category: 'Women',
         productType: 'Jackets',
         title: 'Fresh look jacket for parties and meetings',
@@ -319,6 +323,7 @@ const products = [
     },
     {
         productID: '111128',
+        productLink: '#',
         category: 'Women',
         productType: 'Long-length',
         title: 'Long-length skirt by Mark Jacobs',
@@ -328,6 +333,7 @@ const products = [
     },
     {
         productID: '111129',
+        productLink: '#',
         category: 'Women',
         productType: 'Trousers',
         title: 'Summer trousers Bee Free',
