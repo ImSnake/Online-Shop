@@ -20,7 +20,7 @@ class GoodsView {
 }
 
 /** GoodView: class
- * @param {HTML} title, price, imageLink - получает значения
+ * @param {HTML} title, price, imageLink, url, id - получает значения
  * @param {HTML} el - элемент DOM
  * @param {function} createElement - клонирует элемент из шаблона
  * @param {function} render - заполняет el значениями, переданными из GoodsView
@@ -53,6 +53,8 @@ class GoodView {
 
 /**
  * Объект с методами для отображения товаров на страницах магазина
+ * @param {HTML} container для отрисовки товаров
+ * @param {[object]} actualGoodsList список товаров для отрисовки
  */
 const goods = {
 	container: document.getElementById('products'),

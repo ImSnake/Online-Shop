@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- *
+ *GoodInCart класс для отрисовки товаров в корзине
  */
 class GoodInCart {
     constructor(title, price, imageLink, url, id, qty) {
@@ -32,7 +32,11 @@ class GoodInCart {
 }
 
 /**
- *
+ * cart Объект с методами для отображения товаров в корзине
+ * @param {HTML} container для отрисовки товаров
+ * @param {[object]} goodsInCart список товаров в корзине
+ * @param {number} amount количество товаров в корзине
+ * @param {number} total сумма всех товаров в корзине
  */
 const cart = {
     container: document.getElementById('in-cart'),
@@ -41,40 +45,38 @@ const cart = {
     total: 0,
 
     /**
-     *
+     * getCartItems заправшивает список товаров в корзине с сервера, запоминает, запускает метод отрисовки
      */
     getCartItems(){
        $.get('http://localhost:3000/cart', {}, function(list) {
                cart.goodsInCart = list;
-               cart.renderCart(cart.container, cart.goodsInCart);
+               cart.renderCart(cart.goodsInCart);
        }, 'json');
     },
 
     /**
-     *
+     * renderCart отрисовывает содержимое корзины, суммирует товары и стоимость
+     *@param {[object]} list список товаров в корзине
      */
-    renderCart(elem, list){
+    renderCart(list){
         this.amount = 0;
         this.total = 0;
-
         //console.log(list);
-        elem.innerHTML='';
+        cart.container.innerHTML='';
         for (let goodView, i = 0; i < list.length; i++) {
             this.amount += parseInt(list[i].amount);
             let sum = list[i].amount * list[i].price;
             this.total += sum;
-
             goodView = new GoodInCart(list[i].title, list[i].price, list[i].imageLink, list[i].productLink, list[i].id, list[i].amount);
-            elem.appendChild(goodView.render());
+            cart.container.appendChild(goodView.render());
         }
-
         document.getElementById('total').innerHTML = `$${this.total}.00`;
         document.querySelector('.number-of-goods span').innerHTML = this.amount;
         this.cartAnimation();
     },
 
     /**
-     *
+     * cartAnimation если в корзине +=2 товара - добавляет эффект анимации
      */
     cartAnimation(){
         if (this.amount >= 2) {
@@ -85,7 +87,10 @@ const cart = {
     },
 
     /**
-     *
+     * checkCart проверяет наличие выбранного товара в корзине.
+     * Если товар есть - увеличивает количество и перерисовывает корзину. Если нет - вернет false
+     *@param {string} id товара
+     *@return {boolean}
      */
     checkCart(id){
         for (let i = 0; i < cart.goodsInCart.length; i++) {
@@ -97,7 +102,7 @@ const cart = {
                     url: url,
                     data: {amount: cart.goodsInCart[i].amount},
                     success: function () {
-                        cart.renderCart(cart.container, cart.goodsInCart);
+                        cart.renderCart(cart.goodsInCart);
                     }
                 });
                 return true
@@ -105,9 +110,10 @@ const cart = {
         }
         return false;
     },
-
     /**
-     *
+     *pushGoodToCart добавляет новый выбранный товар в корзину на сервер, запускает метод отрисовки корзины
+     *@param {string} id товара
+     *@return {object} good данные о товаре
      */
     pushGoodToCart(id){
         let good = goods.goodToCart(id);
@@ -122,7 +128,8 @@ const cart = {
     },
 
     /**
-     *
+     *deleteFromCart удаляет товар с сервера, запускает метод отрисовки корзины
+     * @param {html} good контейнер с товаром
      */
     deleteFromCart(good){
         $.ajax({
@@ -134,3 +141,5 @@ const cart = {
         });
     }
 };
+
+//TODO: добавить описание методов
