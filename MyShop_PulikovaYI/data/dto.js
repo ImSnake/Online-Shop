@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * @type{[object]} объект с набором свойств для отрисовки главного меню
+ * @type{[object]} объект со структурой навигационного меню по товарам для отрисовки главного меню
  */
 const navItems = [
     {href: "index.html", name: "Home"},
@@ -147,16 +147,19 @@ const navItems = [
     {href: "#", name: "Hot Deals"},
 ];
 
+
+
+
 /**
  * @type{[object]} объект с информацией о товарах каталога
- */
+
 const products = [
     {
         productID: '111119',
         productLink: "single-good-card.html",
         category: 'Women',
         productType: 'Trousers',
-        title: 'New fashion trousers by Tom Tailor',
+        title: "MOSCHINO CHEAP AND CHIC",
         price: 199,
         imageLink: 'images/products/good-9.jpg',
         specialOffer: false,
@@ -342,6 +345,9 @@ const products = [
         specialOffer: false,
     },
 ];
+
+ */
+
 
 /*
 * const mainProductsList = [

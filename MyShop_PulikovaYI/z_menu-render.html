@@ -3,23 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Navigation</title>
+    <title>TEMPLATE</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="vendor/fontawesome/css/all.css">
     <link rel="stylesheet" href="styles/style-main.css">
 
-    <script async type="text/javascript" src="vendor/js/jq.js"></script>
-    <script async type="text/javascript" src="js/dto.js"></script>
-    <script async type="text/javascript" src="js/NavRender.js"></script>
-    <script async type="text/javascript" src="js/GoodsView.js"></script>
-    <script async type="text/javascript" src="js/js.js"></script>
+    <script type="text/javascript" src="vendor/js/jq.js"></script>
+    <script type="text/javascript" src="data/dto.js"></script>
 </head>
 
 <body>
 <div class="container">
     <div class="content">
+
         <header class="header">
             <div class="content-box">
                 <div class="header-left">
@@ -36,54 +34,52 @@
                         <button class="search-icon" type="submit"><i class="fas fa-search"></i></button>
                     </form>
                 </div>
+
                 <div class="header-right">
-                    <div class="cart shake-bottom">
+
+                    <div id='cart' class="cart">
                         <a href="#">
-                            <div class="number-of-goods"><span>2</span></div>
+                            <div class="number-of-goods"><span>0</span></div>
                             <img src="images/cart.svg" alt="cart"></a>
                         <div class="traingle-cart"></div>
                         <div class="cart-menu">
-                            <div class="good-in-cart">
-                                <div class="good-in-cart-details">
-                                    <a class="shadow-drop-2-center" href="#"><img src="images/good-in-cart.jpg" alt="good-in-cart"></a>
-                                    <div class="good-in-cart-description">
-                                        <h5>Rebox Zane</h5>
-                                        <div class="cart-good-stars">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half"></i>
+
+                            <!-- Template for card rendering -->
+                            <div id="template-cart" class="template-hide">
+                                <div class="good-in-cart">
+                                    <div class="good-in-cart-details">
+                                        <a class="shadow-drop-2-center cart-url" href="#"><img src='' class='cart-good-image'></a>
+                                        <div class="description">
+                                            <h5 class="cart-title"></h5>
+                                            <div class="cart-good-stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                            <h6> <span class="cart-amount"></span>*<span class="cart-price">$</span> = <span class="in-total"></span></h6>
                                         </div>
-                                        <h6>1&nbsp;<span>x</span> $250</h6>
                                     </div>
+                                    <div class="remove-good-from-cart"><a href="#"><i class="far fa-minus-square"></i></a></div>
                                 </div>
-                                <div class="remove-good-from-cart"><a href="#"><i class="far fa-minus-square"></i></a></div>
                             </div>
-                            <div class="good-in-cart">
-                                <div class="good-in-cart-details">
-                                    <a class="shadow-drop-2-center" href="single-good-card.html"><img src="images/good-in-cart2.jpg" alt="good-in-cart2"></a>
-                                    <div class="good-in-cart-description">
-                                        <h5>Rebox Zane</h5>
-                                        <div class="cart-good-stars">
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                        </div>
-                                        <h6>1&nbsp;<span>x</span> $250</h6>
-                                    </div>
-                                </div>
-                                <div class="remove-good-from-cart"><a href="#"><i class="far fa-minus-square"></i></a></div>
-                            </div>
+
+                            <!-- container for JS-goods-rendering-->
+                            <div id="in-cart"></div>
+
                             <div class="total">
-                                <span>TOTAL</span> <span>$500.00</span>
+                                <span>TOTAL</span> <span id="total">$500.00</span>
                             </div>
-                            <div class="cart-buttons"> <a href="checkout.html">CHECKOUT</a> <br>
-                                <a href="shopping-cart.html">GO&nbsp;TO&nbsp;CART</a></div>
+
+                            <div class="cart-buttons">
+                                <a href="checkout.html">CHECKOUT</a>
+                                <br>
+                                <a href="shopping-cart.html">GO&nbsp;TO&nbsp;CART</a>
+                            </div>
                         </div>
                     </div>
+
                     <details class="my-account-button">
                         <summary>My&nbsp;Account</summary>
                         <div class="my-account-open">
@@ -160,7 +156,7 @@
                     <div class="good-static"><img class="good-image" src="images/good-catalog-background.jpg" alt="Template">
                         <div class="good-hover">
                             <div class="good-to-cart">
-                                <a href="#"><img src="images/cart-icon-good-box.svg" alt="cart-icon-good-box">Add to&nbsp;Cart</a>
+                                <a class="add-to-cart" href="javascript:void(0)"><img src="images/cart-icon-good-box.svg" alt="cart-icon-good-box">Add to&nbsp;Cart</a>
                             </div>
                         </div>
                     </div>
@@ -311,7 +307,13 @@
             </div>
         </div>
     </footer>
+
 </div>
+
+<script type="text/javascript" src="js/NavRender.js"></script>
+<script type="text/javascript" src="js/GoodsView.js"></script>
+<script type="text/javascript" src="js/Cart.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
 
 </body>
 

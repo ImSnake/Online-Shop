@@ -38,56 +38,30 @@ const sliderComments= {
     },
 };
 
-/**
- * Управляет отображением товаров на страницах магазина
- */
-const goods = {
-     /**
-     *@param{HTML} elem
-     *@param{[object]} list
-     *@return{function} goodsView
-     */
-    findFilter(elem, list){
-        if (elem.getAttribute('data-category') !== null) {
-            let filter = elem.getAttribute('data-category');
-            //console.log(filter);
-            let sortedList = [];
-            for (let i = 0; i < list.length; i++) {
-                for (const prop in list[i]) {
-                    if (list[i][prop] === filter) {
-                        sortedList.push(products[i]);
-                    }
-                }
-            }
-            //console.log(sortedList);
-            const goodsView = new GoodsView(sortedList);
-            return goodsView.render();
-        }
-        const goodsView = new GoodsView(products);
-        goodsView.render();
-    },
-};
 
 window.onload = function() {
 
+//построение навигационных меню по товарам в хедэре
     const renderNav = new NavRender(navItems);
     renderNav.getMenu('header-navigation');
     renderNav.getBrowse('browse-items');
 
+    cart.getCartItems();
 
-    //если страница содержит блок с товарами
-    if (document.getElementById('products') !== null) {
-        goods.findFilter(document.getElementById('products'), products);
-    }
+//обработчик события при клике 'удалить из корзины'
+    $('#in-cart').on('click', '.remove-good-from-cart',  function(event) {
+        cart.deleteFromCart($(this));
+        event.preventDefault();
+    });
 
-    /*
-    if (document.getElementById('slider-comments') !== null){
-        sliderComments.getSlideContent();
-    }
-    */
+// TODO: По умолчанию - корзина пуста
+
 };
 
+/*
+(function ($) {
+    $(function() {
 
-
-
-
+    });
+})(jQuery);
+*/

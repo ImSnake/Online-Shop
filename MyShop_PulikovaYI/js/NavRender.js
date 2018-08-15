@@ -1,7 +1,7 @@
 "use strict";
 
-/** NavRender: class создание навигационного меню сайта
- * @param {[object]} menu данные о структуре меню
+/** NavRender: class создание навигационных меню сайта: browse и nav
+ * @param {[object]} menu данные о структуре меню из dto
  * @param {number} subColumns счетчик отрисованных элементов 3-го уровня в колонках (mega-menu-column) .
  */
 class NavRender {
@@ -10,7 +10,7 @@ class NavRender {
         this.subColumns = 0;
     }
 
-    /** getBrowse запуск методов отрисовки хедер browse (details)
+    /** getBrowse запуск методов отрисовки browse (details)
      */
     getBrowse(elem){
         let browseHTML = '';
@@ -22,7 +22,7 @@ class NavRender {
         document.getElementById(elem).innerHTML = browseHTML;
     }
 
-    /** getMenu запуск методов отрисовки навигационного меню
+    /** getMenu запуск методов отрисовки навигационного меню nav
      */
     getMenu(elem) {
         let navHTML = '';
@@ -68,7 +68,7 @@ class NavRender {
         return sub3;
     }
 
-    /** renderItem метод отрисовка одной строки списка
+    /** renderItem метод отрисовки одной строки списка
      * @param {string} href ссылка на страницу сайта
      * @param {string} name заголовк ссылки в меню
      * @return {string} строка списка "ссылка + имя"
