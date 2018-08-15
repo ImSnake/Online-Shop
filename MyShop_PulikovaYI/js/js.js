@@ -1,9 +1,33 @@
 "use strict";
 
+window.onload = function() {
+
+//построение навигационных меню по товарам в хедэре
+    const renderNav = new NavRender(navItems);
+    renderNav.getMenu('header-navigation');
+    renderNav.getBrowse('browse-items');
+
+//рендеринг содержимого корзны
+    cart.getCartItems();
+
+//обработчик события при клике 'удалить из корзины'
+    $('#in-cart').on('click', '.remove-good-from-cart',  function(event) {
+        cart.deleteFromCart($(this));
+        event.preventDefault();
+    });
+
+// TODO: По умолчанию - корзина пуста
+
+};
+
+
+
+
+
 /**
  *
  */
-const sliderComments= {
+/*const sliderComments= {
      blocks: [
         {
             imageLink: 'images/comments-1.png',
@@ -37,26 +61,7 @@ const sliderComments= {
         document.getElementById('comments-container').appendChild(slide);
     },
 };
-
-
-window.onload = function() {
-
-//построение навигационных меню по товарам в хедэре
-    const renderNav = new NavRender(navItems);
-    renderNav.getMenu('header-navigation');
-    renderNav.getBrowse('browse-items');
-
-    cart.getCartItems();
-
-//обработчик события при клике 'удалить из корзины'
-    $('#in-cart').on('click', '.remove-good-from-cart',  function(event) {
-        cart.deleteFromCart($(this));
-        event.preventDefault();
-    });
-
-// TODO: По умолчанию - корзина пуста
-
-};
+*/
 
 /*
 (function ($) {

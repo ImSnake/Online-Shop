@@ -121,9 +121,8 @@ const goods = {
     $(function() {
 
 //если страница содержит какой-либо блок с товарами, запуск методов отрисовки
-        if ($('#products') !== null) {
-            goods.getGoodsList();
-        }
+         goods.getGoodsList();
+//TODO: BUG! Выдает ошибку отрисовки товаров при переходе из checkout.html в product-catalog-men.html
 
 //обработчик события при клике 'add-to-cart'
         $('#products').on('click', '.good-to-cart a', function(event) {
