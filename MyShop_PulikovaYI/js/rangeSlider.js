@@ -1,10 +1,8 @@
 'use strict';
 
 /**
- *
+ * jQuerryUI эффект - добавляет slider-range на страницу продуктового каталога
  */
-
-
 $( function() {
     $( "#slider-range" ).slider({
         range: true,

@@ -221,54 +221,5 @@
       "specialOffer": false
     }
   ],
-  "cart": [
-    {
-      "id": "2",
-      "productID": "111111",
-      "productLink": "single-good-card.html",
-      "category": "Men",
-      "productType": "T-shirt",
-      "title": "Mango People T-shirt",
-      "price": "45",
-      "imageLink": "images/products/good-1.jpg",
-      "specialOffer": "false",
-      "amount": "1"
-    },
-    {
-      "id": "1",
-      "productID": "111119",
-      "productLink": "single-good-card.html",
-      "category": "Women",
-      "productType": "Trousers",
-      "title": "MOSCHINO CHEAP AND CHIC",
-      "price": "199",
-      "imageLink": "images/products/good-9.jpg",
-      "specialOffer": "false",
-      "amount": "1"
-    },
-    {
-      "id": "12",
-      "productID": "111122",
-      "productLink": "single-good-card.html",
-      "category": "Men",
-      "productType": "T-shirts",
-      "title": "New look elegant t-shirt",
-      "price": "45",
-      "imageLink": "images/products/good-12.jpg",
-      "specialOffer": "false",
-      "amount": "1"
-    },
-    {
-      "id": "4",
-      "productID": "111113",
-      "productLink": "single-good-card.html",
-      "category": "Men",
-      "productType": "Jackets",
-      "title": "Mango People Jacket",
-      "price": "149",
-      "imageLink": "images/products/good-3.jpg",
-      "specialOffer": "false",
-      "amount": "1"
-    }
-  ]
+  "cart": []
 }
