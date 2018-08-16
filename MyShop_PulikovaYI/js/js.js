@@ -24,7 +24,7 @@ const mainWatchers = {
     },
 
     /**
-     * Если на странице есть боксы с товарами - запускает методы GoodsView
+     * Если на странице есть корзина в хэдере - запускает методы Cart
      */
     searchForCart(){
         if (document.getElementById('cart') === null) {
