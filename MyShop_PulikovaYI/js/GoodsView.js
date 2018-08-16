@@ -58,40 +58,75 @@ class GoodView {
  */
 const goods = {
 	container: document.getElementById('products'),
+	filter: document.getElementById('products').getAttribute('data-filter'),
 	actualGoodsList: [],
 
-    /** getGoodsList метод для запроса списка всех актуальных товаров с сервера
-	 *@return{[object]} сохраняет список товаров в объект goods.actualGoodsList
+
+    /**getGoodsList при наличии атрибута "data-filter" запросит список актуальных товаров с сервера, применит фильтр, запустит отрисовку
+	 *@return{[object]} сохранит обработанный список в goods.actualGoodsList
      */
     getGoodsList () {
-        $.get('http://localhost:3000/goods', {}, function(list) {
-            goods.actualGoodsList = list;
-            //console.log(goods.actualGoodsList);
-			if (goods.container.getAttribute('data-filter') !== null) {
-                goods.getFilter(goods.actualGoodsList);
-            }
-            const goodsView = new GoodsView(goods.actualGoodsList);
-            goodsView.render();
-        }, 'json')
+    	if (this.filter !== null) {
+    		$.ajax({
+                url: 'http://localhost:3000/goods',
+                type: 'GET',
+                dataType : 'json',
+                success: function (data) {
+                	let list = data;
+                    goods.getFilter(list);
+                    goods.renderGoods();
+                },
+                error: function(e){
+                    console.log(e);
+                }
+            });
+        }
     },
 
-    /**findFilter метод определяет фильтр для отрисовки товаров на странице по атрибуту 'data-filter'
-     *@param{[object]} list актуальный список всех товаров магазина, полученный с сервера
-     *@return{function} goodsView запускает метод отрисовки товаров на странице
+    /**findFilter фильтрует список товаров для отображения;
+	 * если фильтр "all" - вернет первые 20 товаров списка;
+	 * если это страница товара - вернет 4 товара того-же типаж;
+	 * сли иное - ищет фильтр в значениях свойста товара;
+     *@param{[object]} list список товаров, полученный с сервера
+     *@return{[object]} отфильтрованный список
      */
     getFilter(list){
-        let filter = goods.container.getAttribute('data-filter');
-        //console.log(filter);
-		let sortedList = [];
-		for (let i = 0; i < list.length; i++) {
-			for (const prop in list[i]) {
-				if (list[i][prop] === filter) {
-					sortedList.push(list[i]);
-				}
-			}
+        let sortedList = this.actualGoodsList;
+
+        if (this.filter === "all") {
+            for (let i = 0; i < 20; i++) {
+                sortedList.push(list[i]);
+            }
+            return sortedList;
+        }
+
+        if (this.filter === "find"){
+            this.filter = document.getElementById('good-id').getAttribute('data-type');
+            for (let i = 0; i < list.length; i++) {
+                for (const prop in list[i]) {
+                    if (list[i][prop] === this.filter) {
+                        sortedList.push(list[i]);
+                    }
+                }
+            }
+            return sortedList;
 		}
-		this.actualGoodsList = sortedList;
-		//console.log(goods.actualGoodsList);
+
+        for (let i = 0; i < list.length; i++) {
+            for (const prop in list[i]) {
+                if (list[i][prop] === this.filter) {
+                    sortedList.push(list[i]);
+                }
+            }
+        }
+    },
+
+    /**
+     *renderGoods метод отрисовки отфильтрованных товаров
+     */
+    renderGoods(){
+        const goodsView = new GoodsView(goods.actualGoodsList);
+        goodsView.render();
     },
 
     /**goodToCart метод находит по id в объекте товаров, отрисованных на странице, собирает и передает необходимую информацию о выбранном товаре
@@ -109,22 +144,8 @@ const goods = {
         }
 	},
 
-//TODO: настроить фильтр: отражать 4 товара
-// single-good-card.html - фильтр по свойству productType в зависимости от выбранного товара
-// eсли html имеет класс "you-may-like-also", определяет фильтр для отрисовки 4-х товаров
-     findFilter(){
-	},
-};
-
-
-(function ($) {
-    $(function() {
-
-//если страница содержит какой-либо блок с товарами, запуск методов отрисовки
-         goods.getGoodsList();
-//TODO: BUG! Выдает ошибку отрисовки товаров при переходе из checkout.html в product-catalog-men.html
-
-//обработчик события при клике 'add-to-cart'
+    //обработчик события при клике на кнопку 'add-to-cart'
+	addGoodsEventListener(){
         $('#products').on('click', '.good-to-cart a', function(event) {
             const id = $(this).attr('data-id');
             if (cart.checkCart(id) === false) {
@@ -132,6 +153,15 @@ const goods = {
             }
             event.preventDefault();
         });
-    });
-})(jQuery);
+	},
+
+
+// single-good-card.html - фильтр по свойству productType в зависимости от выбранного товара
+// eсли html имеет класс "you-may-like-also", определяет фильтр для отрисовки 4-х товаров
+     findFilter(){
+
+	},
+};
+
+//TODO: фильтр 'you-may-like-also' должен учитывать категорию
 

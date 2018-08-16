@@ -12,6 +12,11 @@
 
     <script type="text/javascript" src="vendor/js/jq.js"></script>
     <script type="text/javascript" src="data/dto.js"></script>
+
+    <!-- jQuerryUI snippet -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
 </head>
 
 <body>
@@ -48,7 +53,7 @@
                             <div id="template-cart" class="template-hide">
                                 <div class="good-in-cart">
                                     <div class="good-in-cart-details">
-                                        <a class="shadow-drop-2-center cart-url" href="#"><img src='' class='cart-good-image'></a>
+                                        <a class="cart-url" href="#"><img src='' class='cart-good-image'></a>
                                         <div class="description">
                                             <h5 class="cart-title"></h5>
                                             <div class="cart-good-stars">
@@ -96,6 +101,25 @@
         <nav>
             <ul id="header-navigation" class="header-navigation"></ul>
         </nav>
+
+
+        <div class='testing content-box'>
+
+            <p>
+                <label for="amount">Price range:</label>
+                <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            </p>
+
+            <div id='item' class="good-box">
+                <div class="good-static"><img class="good-image" src="images/good-catalog-background.jpg" alt="Template">
+                    <div class="good-hover">
+                        <div class="good-to-cart">
+                            <a class="add-to-cart" href="javascript:void(0)"><img src="images/cart-icon-good-box.svg" alt="cart-icon-good-box">Add to&nbsp;Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="main-poster">
             <div class="content-box">
@@ -170,7 +194,7 @@
             </div>
 
             <!-- container for JS-goods-rendering-->
-            <div id="products" class="main-goods-catalog"></div>
+            <div id="products" class="main-goods-catalog" data-filter="all"></div>
 
             <a class="browse-all-prod-button" href="#">Browse All Products &gt;</a>
         </section>
@@ -309,6 +333,7 @@
     </footer>
 
 </div>
+
 
 <script type="text/javascript" src="js/NavRender.js"></script>
 <script type="text/javascript" src="js/Cart.js"></script>

@@ -1,22 +1,48 @@
 "use strict";
 
+const mainWatchers = {
+
+    /**
+     * Запускает методы для отрисовки навигации
+     */
+    renderNavigation(){
+        const renderNav = new NavRender(navItems);
+        renderNav.getMenu('header-navigation');
+        renderNav.getBrowse('browse-items');
+    },
+
+    /**
+     * Если на странице есть боксы с товарами - запускает методы GoodsView
+     */
+    searchForProducts(){
+        if (document.getElementById('products') === null) {
+        console.log('no products');
+        return;
+        }
+        goods.getGoodsList();
+        goods.addGoodsEventListener();
+    },
+
+    /**
+     * Если на странице есть боксы с товарами - запускает методы GoodsView
+     */
+    searchForCart(){
+        if (document.getElementById('cart') === null) {
+            console.log('no cart');
+            return;
+        }
+        cart.getCartItems();
+        cart.addCartEventListener();
+
+    },
+};
+
+
 window.onload = function() {
 
-//построение навигационных меню по товарам в хедэре
-    const renderNav = new NavRender(navItems);
-    renderNav.getMenu('header-navigation');
-    renderNav.getBrowse('browse-items');
-
-//рендеринг содержимого корзны
-    cart.getCartItems();
-
-//обработчик события при клике 'удалить из корзины'
-    $('#in-cart').on('click', '.remove-good-from-cart',  function(event) {
-        cart.deleteFromCart($(this));
-        event.preventDefault();
-    });
-
-// TODO: По умолчанию - корзина пуста
+    mainWatchers.renderNavigation();
+    mainWatchers.searchForProducts();
+    mainWatchers.searchForCart();
 
 };
 

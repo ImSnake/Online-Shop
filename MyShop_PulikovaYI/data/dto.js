@@ -38,7 +38,7 @@ const navItems = [
                 ]
         },
     ]},
-    {href: "#", name: "Women", items: [
+    {href: "product-catalog-women.html", name: "Women", items: [
         {name: 'DRESSES', href: "#", subItems:
                 [
                     {href: "#", name: "Short-length"},
