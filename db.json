@@ -14,7 +14,7 @@
     {
       "id": "2",
       "productID": "111111",
-      "productLink": "#",
+      "productLink": "single-good-card.html",
       "category": "Men",
       "productType": "T-shirt",
       "title": "Mango People T-shirt",
@@ -25,7 +25,7 @@
     {
       "id": "3",
       "productID": "111112",
-      "productLink": "#",
+      "productLink": "single-good-card.html",
       "category": "Women",
       "productType": "Shirts",
       "title": "Mango People Shirt",
@@ -36,7 +36,7 @@
     {
       "id": "4",
       "productID": "111113",
-      "productLink": "#",
+      "productLink": "single-good-card.html",
       "category": "Men",
       "productType": "Jackets",
       "title": "Mango People Jacket",
@@ -47,7 +47,7 @@
     {
       "id": "5",
       "productID": "111114",
-      "productLink": "#",
+      "productLink": "single-good-card.html",
       "category": "Women",
       "productType": "T-shirts",
       "title": "Mango People T-shirt",
@@ -58,7 +58,7 @@
     {
       "id": "6",
       "productID": "111115",
-      "productLink": "#",
+      "productLink": "single-good-card.html",
       "category": "Women",
       "productType": "Shirts",
       "title": "Some New Brand Shirt Last Season",
@@ -69,7 +69,7 @@
     {
       "id": "7",
       "productID": "111116",
-      "productLink": "#",
+      "productLink": "single-good-card.html",
       "category": "Men",
       "productType": "Jackets",
       "title": "Mango People Jacket",
@@ -80,7 +80,7 @@
     {
       "id": "8",
       "productID": "111117",
-      "productLink": "#",
+      "productLink": "single-good-card.html",
       "category": "Men",
       "productType": "Skirts",
       "title": "Mango People Skirts",
@@ -91,7 +91,7 @@
     {
       "id": "9",
       "productID": "111118",
-      "productLink": "#",
+      "productLink": "single-good-card.html",
       "category": "Men",
       "productType": "Denim",
       "title": "Some New Brand Denim Last Collection",
@@ -102,7 +102,7 @@
     {
       "id": "10",
       "productID": "111120",
-      "productLink": "#",
+      "productLink": "single-good-card.html",
       "category": "Men",
       "productType": "Jackets",
       "title": "Casual warm winter jacket",
@@ -113,7 +113,7 @@
     {
       "id": "11",
       "productID": "111121",
-      "productLink": "#",
+      "productLink": "single-good-card.html",
       "category": "Men",
       "productType": "Coats",
       "title": "Coat fashion new look by Trussardi Co.",
@@ -124,7 +124,7 @@
     {
       "id": "12",
       "productID": "111122",
-      "productLink": "#",
+      "productLink": "single-good-card.html",
       "category": "Men",
       "productType": "T-shirts",
       "title": "New look elegant t-shirt",
@@ -135,7 +135,7 @@
     {
       "id": "13",
       "productID": "111123",
-      "productLink": "#",
+      "productLink": "single-good-card.html",
       "category": "Men",
       "productType": "Coats",
       "title": "Gothic style warm outwear coat",
@@ -146,7 +146,7 @@
     {
       "id": "14",
       "productID": "111124",
-      "productLink": "#",
+      "productLink": "single-good-card.html",
       "category": "Men",
       "productType": "Jackets",
       "title": "Warm jacket by Tommy official and casual stile",
@@ -157,7 +157,7 @@
     {
       "id": "15",
       "productID": "111125",
-      "productLink": "#",
+      "productLink": "single-good-card.html",
       "category": "Men",
       "productType": "T-shirts",
       "title": "New look casual cotton t-shirt",
@@ -168,7 +168,7 @@
     {
       "id": "16",
       "productID": "111126",
-      "productLink": "#",
+      "productLink": "single-good-card.html",
       "category": "Women",
       "productType": "Leggings",
       "title": "Fit and cute stretch-leggings",
@@ -179,7 +179,7 @@
     {
       "id": "17",
       "productID": "111127",
-      "productLink": "#",
+      "productLink": "single-good-card.html",
       "category": "Women",
       "productType": "Jackets",
       "title": "Fresh look jacket for parties and meetings",
@@ -190,7 +190,7 @@
     {
       "id": "18",
       "productID": "111128",
-      "productLink": "#",
+      "productLink": "single-good-card.html",
       "category": "Women",
       "productType": "Long-length",
       "title": "Long-length skirt by Mark Jacobs",
@@ -201,14 +201,74 @@
     {
       "id": "19",
       "productID": "111129",
-      "productLink": "#",
+      "productLink": "single-good-card.html",
       "category": "Women",
       "productType": "Trousers",
       "title": "Summer Trousers Bee Free",
       "price": 65,
       "imageLink": "images/products/good-19.jpg",
       "specialOffer": false
+    },
+    {
+      "id": "20",
+      "productID": "111130",
+      "productLink": "single-good-card.html",
+      "category": "Women",
+      "productType": "Trousers",
+      "title": "PETITE ANKLE ZIP DRAWSTRING PANTS",
+      "price": 99,
+      "imageLink": "images/products/good-20.jpg",
+      "specialOffer": false
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "2",
+      "productID": "111111",
+      "productLink": "single-good-card.html",
+      "category": "Men",
+      "productType": "T-shirt",
+      "title": "Mango People T-shirt",
+      "price": "45",
+      "imageLink": "images/products/good-1.jpg",
+      "specialOffer": "false",
+      "amount": "1"
+    },
+    {
+      "id": "1",
+      "productID": "111119",
+      "productLink": "single-good-card.html",
+      "category": "Women",
+      "productType": "Trousers",
+      "title": "MOSCHINO CHEAP AND CHIC",
+      "price": "199",
+      "imageLink": "images/products/good-9.jpg",
+      "specialOffer": "false",
+      "amount": "1"
+    },
+    {
+      "id": "12",
+      "productID": "111122",
+      "productLink": "single-good-card.html",
+      "category": "Men",
+      "productType": "T-shirts",
+      "title": "New look elegant t-shirt",
+      "price": "45",
+      "imageLink": "images/products/good-12.jpg",
+      "specialOffer": "false",
+      "amount": "1"
+    },
+    {
+      "id": "4",
+      "productID": "111113",
+      "productLink": "single-good-card.html",
+      "category": "Men",
+      "productType": "Jackets",
+      "title": "Mango People Jacket",
+      "price": "149",
+      "imageLink": "images/products/good-3.jpg",
+      "specialOffer": "false",
+      "amount": "1"
+    }
+  ]
 }

@@ -8,10 +8,14 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="vendor/fontawesome/css/all.css">
+    <link rel="stylesheet" href="vendor/jquery-ui-1.12.1.custom-slider/jquery-ui.css">
     <link rel="stylesheet" href="styles/style-main.css">
 
-    <script async type="text/javascript" src="vendor/js/jq.js"></script>
-    <script async type="text/javascript" src="data/dto.js"></script>
+    <script type="text/javascript" src="vendor/js/jq.js"></script>
+    <script type="text/javascript" src="data/dto.js"></script>
+
+    <script type="text/javascript" src="vendor/jquery-ui-1.12.1.custom-slider/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/rangeSlider.js"></script>
 </head>
 
 <body>
@@ -191,7 +195,13 @@
                         </div>
                         <div class="price-option">
                             <h3>pRICE</h3>
-                            <hr>
+                            <p>
+                                <label for="amount">range: </label>
+                                <input type="text" id="amount" readonly style="border:0; color:#ef5b70; font-weight:bold;">
+                            </p>
+
+                            <div id="slider-range"></div>
+
                             <div class="price-scale">
                                 <div class="price-scale-value">
                                     <span>$min-value</span>

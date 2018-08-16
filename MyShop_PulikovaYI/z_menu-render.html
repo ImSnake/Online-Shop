@@ -8,14 +8,20 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="vendor/fontawesome/css/all.css">
+    <link rel="stylesheet" href="vendor/jquery-ui-1.12.1.custom-slider/jquery-ui.css">
     <link rel="stylesheet" href="styles/style-main.css">
 
     <script type="text/javascript" src="vendor/js/jq.js"></script>
     <script type="text/javascript" src="data/dto.js"></script>
 
-    <!-- jQuerryUI snippet -->
+    <!-- jQuerryUI snippet
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    -->
+
+
+    <script type="text/javascript" src="vendor/jquery-ui-1.12.1.custom-slider/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/rangeSlider.js"></script>
 
 </head>
 
@@ -109,6 +115,10 @@
                 <label for="amount">Price range:</label>
                 <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
             </p>
+
+            <div id="slider-range"></div>
+
+
 
             <div id='item' class="good-box">
                 <div class="good-static"><img class="good-image" src="images/good-catalog-background.jpg" alt="Template">
