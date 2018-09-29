@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Women catalog</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.css">
+    <link rel="stylesheet" href="vendor/jquery-ui-1.12.1.custom-slider/jquery-ui.css">
+    <link rel="stylesheet" href="styles/style-main.css">
+
+    <script type="text/javascript" src="vendor/js/jq.js"></script>
+    <script type="text/javascript" src="_goods/dto.js"></script>
+
+    <script type="text/javascript" src="vendor/jquery-ui-1.12.1.custom-slider/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/rangeSlider.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <div class="content">
+        <header class="header">
+            <div class="content-box">
+
+                <div class="header-left">
+                    <a class="logo" href="index.html">
+                        <img src="images/logo.png" alt="logo">BRAN<span>D</span>
+                    </a>
+                    <details class="browse">
+                        <summary>Browse</summary>
+                        <div id="browse-items" class="browse-open">
+                        </div>
+                    </details>
+                    <form class="serach" action="#">
+                        <input type="text" placeholder="Search for Item...">
+                        <button class="search-icon" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+
+                <div class="header-right">
+
+                    <div id='cart' class="cart">
+                        <a href="#">
+                            <div class="number-of-goods"><span>0</span></div>
+                            <img src="images/cart.svg" alt="cart"></a>
+                        <div class="traingle-cart"></div>
+                        <div class="cart-menu">
+
+                            <!-- Template for card rendering -->
+                            <div id="template-cart" class="template-hide">
+                                <div class="good-in-cart">
+                                    <div class="good-in-cart-details">
+                                        <a class="cart-url" href="#"><img src='' class='cart-good-image'></a>
+                                        <div class="description">
+                                            <h5 class="cart-title"></h5>
+                                            <div class="cart-good-stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                            <h6> <span class="cart-amount"></span>*<span class="cart-price">$</span> = <span class="in-total"></span></h6>
+                                        </div>
+                                    </div>
+                                    <div class="remove-good-from-cart"><a href="#"><i class="far fa-minus-square"></i></a></div>
+                                </div>
+                            </div>
+
+                            <!-- container for JS-goods-rendering-->
+                            <div id="in-cart"></div>
+
+                            <div class="total">
+                                <span>TOTAL</span> <span id="total">$500.00</span>
+                            </div>
+
+                            <div class="cart-buttons">
+                                <a href="checkout.html">CHECKOUT</a>
+                                <br>
+                                <a href="shopping-cart.html">GO&nbsp;TO&nbsp;CART</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <details class="my-account-button">
+                        <summary>My&nbsp;Account</summary>
+                        <div class="my-account-open">
+                            <i class="fas fa-user"></i> <br>
+                            <a href="#">LOGIN</a>
+                            <hr>
+                            <i class="fas fa-user-plus"></i> <br><a href="#">CREATE ACCOUNT</a>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </header>
+
+        <nav>
+            <ul id="header-navigation" class="header-navigation"></ul>
+        </nav>
+
+        <div class="breadcrumbs-block">
+            <div class="content-box">
+                <h2>New Arrivals </h2>
+                <div class="breadcrumbs-links">
+                    <a href="index.html">Home</a> /
+                    <a href="product-catalog-men.html">Women</a> /
+                    <a href="#">New Arrivals</a>
+                </div>
+            </div>
+        </div>
+
+        <section class="prod-catalog">
+            <div class="content-box">
+
+                <div class="left-part">
+                    <details class="sort-products">
+                        <summary>Category</summary>
+                        <div class="sort-products-opened">
+                            <ul>
+                                <li><a href="#">Accessories</a></li>
+                                <li><a href="#">Bags</a></li>
+                                <li><a href="#">Denim</a></li>
+                                <li><a href="#">Hoodies &amp; Sweatshirts</a></li>
+                                <li><a href="#">Jackets &amp;&nbsp;Coats</a></li>
+                                <li><a href="#">Pants</a></li>
+                                <li><a href="#">Polos</a></li>
+                                <li><a href="#">Shirts</a></li>
+                                <li><a href="#">Shoes</a></li>
+                                <li><a href="#">Shorts</a></li>
+                                <li><a href="#">Sweaters &amp;&nbsp;Knits</a></li>
+                                <li><a href="#">T-Shirts</a></li>
+                                <li><a href="#">Tanks</a></li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="sort-products">
+                        <summary>BRAND</summary>
+                        <div class="sort-products-opened">
+                            <ul>
+                                <li><a href="#">A&amp;M</a></li>
+                                <li><a href="#">Marco Polo</a></li>
+                                <li><a href="#">Mango</a></li>
+                                <li><a href="#">Michael Corse</a></li>
+                                <li><a href="#">Minimissimi</a></li>
+                                <li><a href="#">Oggi</a></li>
+                                <li><a href="#">Tommy Helfiger</a></li>
+                                <li><a href="#">X-factor</a></li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="sort-products">
+                        <summary>dESIGNER</summary>
+                        <div class="sort-products-opened">
+                            <ul>
+                                <li><a href="#">Enrico Brluchi</a></li>
+                                <li><a href="#">Mario Caravera</a></li>
+                                <li><a href="#">Valentin Valentino</a></li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="right-part">
+                    <div class="product-options">
+                        <div class="trending-option">
+                            <h3>Trending now</h3>
+                            <div class="trending-option-value">
+                                <a href="#">Bohemian</a>
+                                <span>|</span>
+                                <a href="#">Floral</a>
+                                <span>|</span>
+                                <a href="#">Lacebr</a>
+                                <br>
+                                <a href="#">Floral</a>
+                                <span>|</span>
+                                <a href="#">Lace</a>
+                                <span>|</span>
+                                <a href="#">Bohemian</a>
+                            </div>
+                        </div>
+                        <div class="size-option">
+                            <h3>Size</h3>
+                            <form action="#">
+                                <label><input id="XXS" type="checkbox"><span>XXS</span></label>
+                                <label><input id="XS" type="checkbox"><span>XS</span></label>
+                                <label><input id="S" type="checkbox"><span>S</span></label>
+                                <label><input id="M" type="checkbox"><span>M</span></label>
+                                <label><input id="L" type="checkbox"><span>L</span></label>
+                                <label><input id="XL" type="checkbox"><span>XL</span></label>
+                                <label><input id="XXL" type="checkbox"><span>XXL</span></label>
+                            </form>
+                        </div>
+                        <div class="price-option">
+                            <h3>pRICE</h3>
+                            <p>
+                                <label for="amount">range: </label>
+                                <input type="text" id="amount" readonly style="border:0; color:#ef5b70; font-weight:bold;">
+                            </p>
+
+                            <div id="slider-range"></div>
+
+                            <div class="price-scale">
+                                <div class="price-scale-value">
+                                    <span>$min-value</span>
+                                </div>
+                                <div class="price-scale-value">
+                                    <span>$max-value</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left-sort-products">
+                        <form action="#">
+                            <label>
+                                Sort By
+                            </label>
+                            <input id="sort-by-name" list="dl_sort-by-name" placeholder="Name">
+                            <datalist id="dl_sort-by-name">
+                                <option value="SomeName1"></option>
+                                <option value="SomeName2"></option>
+                                <option value="SomeName3"></option>
+                                <option value="SomeName4"></option>
+                                <option value="SomeName5"></option>
+                                <option value="SomeName6"></option>
+                            </datalist>
+                            <label>
+                                Show
+                            </label>
+                            <input class="sort-by-year" id="sort-by-year" list="dl_sort-by-year" placeholder="'18">
+                            <datalist id="dl_sort-by-year">
+                                <option value="'15"></option>
+                                <option value="'16"></option>
+                                <option value="'17"></option>
+                                <option value="'18"></option>
+                            </datalist>
+                        </form>
+                    </div>
+                    <div class="product-catalog">
+
+                        <!-- Template for good-box rendering -->
+                        <div id="template" class="template-hide">
+                            <div class="good-box">
+                                <div class="good-static"><img class="good-image" src="images/good-catalog-background.jpg" alt="Template">
+                                    <div class="good-hover">
+                                        <div class="good-to-cart">
+                                            <a class="add-to-cart" href="#"><img src="images/cart-icon-good-box.svg" alt="cart-icon-good-box">Add to&nbsp;Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class='good-url' href="#">
+                                    <div class="good-description-link">
+                                        <h2 class="good-title"></h2>
+                                        <h3>$ <span class="good-price"> </span></h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- container for JS-goods-rendering-->
+                        <div id="products" class="main-goods-catalog" data-filter="Women"></div>
+
+                    </div>
+
+                    <div class="product-catalog-bottom-nav">
+                        <div class="pagination">
+                            <a href="#">&lt;</a>
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <span>...</span>
+                            <a href="#">7</a>
+                            <a href="#">&gt;</a>
+                        </div>
+                        <a class="button-view-all" href="#">View All</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="special-offer-short">
+            <div class="content-box">
+                <div class="conditions-short">
+                    <div class="conditions-short-img"><img src="images/free-delivery.png" alt="free-delivery"></div>
+                    <h2>Free Delivery</h2>
+                    <p>Worldwide delivery on&nbsp;all. Authorit tively morph next-generation innov tion with extensive models.</p>
+                </div>
+                <div class="conditions-short">
+                    <div class="conditions-short-img"><img src="images/sales-discounts.png" alt="sales-discounts"></div>
+                    <h2>Sales &amp;&nbsp;discounts</h2>
+                    <p>Worldwide delivery on&nbsp;all. Authorit tively morph next-generation innov tion with extensive models.</p>
+                </div>
+                <div class="conditions-short">
+                    <div class="conditions-short-img"><img src="images/quality-assurance.png" alt="quality-assurance"></div>
+                    <h2>Quality assurance</h2>
+                    <p>Worldwide delivery on&nbsp;all. Authorit tively morph next-generation innov tion with extensive models.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="comments-subscribe">
+            <div class="content-box">
+                <div class="comments-subscribe-box">
+                    <section class="comments">
+                        <div class="comments-img"> <img src="images/comments-1.png" alt="comments-1"></div>
+                        <div class="comments-txt">
+                            <p>&laquo;Vestibulum quis porttitor dui! Quisque viverra nunc&nbsp;mi, a&nbsp;pulvinar purus condimentum&nbsp;a. Aliquam condimentum mattis neque sed pretium&raquo;</p>
+                            <h5>Bin Burhan</h5>
+                            <h6>Dhaka, Bd</h6>
+                            <div class="slider-nav"> <span></span> <span></span> <span></span></div>
+                        </div>
+                    </section>
+                    <section class="subcscribe">
+                        <h2>Subscribe</h2>
+                        <h3>FOR OUR NEWLETTER AND PROMOTION</h3>
+                        <form class="subscribe" action="#">
+                            <input type="email" placeholder="Enter Your Email">
+                            <button type="submit">Subscribe</button></form>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer-navigation">
+            <div class="content-box">
+                <div class="about-brand">
+                    <a class="logo" href="index.html"><img src="images/logo.png" alt="logo">BRAN<span>D</span></a>
+                    <p>Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate multidisciplinary materials before go&nbsp;forward benefits. Intrinsicly syndicate an&nbsp;expanded array of&nbsp;processes and cross-unit partnerships.</p>
+                    <p> Efficiently plagiarize 24/365 action items and focused infomediaries. Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.</p>
+                </div>
+                <div class="company">
+                    <h2>COMPANY</h2> <a href="index.html">Home </a>
+                    <br> <a href="#">Shop</a>
+                    <br> <a href="#">About</a>
+                    <br> <a href="#">How It&nbsp;Works</a>
+                    <br> <a href="#">Contact</a> </div>
+                <div class="information">
+                    <h2>INFORMATION</h2> <a href="#">Tearms &amp;&nbsp;Condition</a>
+                    <br> <a href="#">Privacy Policy</a>
+                    <br> <a href="#">How to&nbsp;Buy</a>
+                    <br> <a href="#">How to&nbsp;Sell</a>
+                    <br> <a href="#">Promotion</a> </div>
+                <div class="shop-category">
+                    <h2>SHOP CATEGORY</h2> <a href="product-catalog-men.html">Men</a>
+                    <br> <a href="#">Women</a>
+                    <br> <a href="#">Kids</a>
+                    <br> <a href="#">Apparel</a>
+                    <br> <a href="#">Brows All</a></div>
+            </div>
+        </footer>
+
+    </div>
+
+    <footer class="footer">
+        <div class="content-box">
+            <div class="footer-down">
+                <div class="rights-reserved"><span>&copy;&nbsp;2017 Brand All Rights Reserved.</span></div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<script type="text/javascript" src="js/NavRender.js"></script>
+<script type="text/javascript" src="js/Cart.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+<script type="text/javascript" src="js/GoodsView.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,341 @@
+/*animation shake-bottom*/
+.shake-bottom
+  -webkit-animation: shake-bottom 4s ease-in-out 5s infinite forwards
+  animation: shake-bottom 4s ease-in-out 5s infinite forwards
+
+@-webkit-keyframes shake-bottom
+  0%,
+  50%
+    -webkit-transform: rotate(0deg)
+    transform: rotate(0deg)
+    -webkit-transform-origin: 50% 100%
+    transform-origin: 50% 100%
+  5%
+    -webkit-transform: rotate(2deg)
+    transform: rotate(2deg)
+  10%,
+  20%,
+  30%
+    -webkit-transform: rotate(-4deg)
+    transform: rotate(-4deg)
+  15%,
+  25%,
+  35%
+    -webkit-transform: rotate(4deg)
+    transform: rotate(4deg)
+  40%
+    -webkit-transform: rotate(-2deg)
+    transform: rotate(-2deg)
+  45%
+    -webkit-transform: rotate(2deg)
+    transform: rotate(2deg)
+
+@keyframes shake-bottom
+  0%,
+  50%
+    -webkit-transform: rotate(0deg)
+    transform: rotate(0deg)
+    -webkit-transform-origin: 50% 100%
+    transform-origin: 50% 100%
+  5%
+    -webkit-transform: rotate(2deg)
+    transform: rotate(2deg)
+  10%,
+  20%,
+  30%
+    -webkit-transform: rotate(-4deg)
+    transform: rotate(-4deg)
+  15%,
+  25%,
+  35%
+    -webkit-transform: rotate(4deg)
+    transform: rotate(4deg)
+  40%
+    -webkit-transform: rotate(-2deg)
+    transform: rotate(-2deg)
+  45%
+    -webkit-transform: rotate(2deg)
+    transform: rotate(2deg)
+
+/*main-poster-animation*/
+.slide-right
+  -webkit-animation: slide-right 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s both
+  animation: slide-right 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s both
+
+@-webkit-keyframes slide-right
+  0%
+    -webkit-transform: translateX(0)
+    transform: translateX(0)
+  100%
+    -webkit-transform: translateX(120px)
+    transform: translateX(120px)
+
+@keyframes slide-right
+  0%
+    -webkit-transform: translateX(0)
+    transform: translateX(0)
+  100%
+    -webkit-transform: translateX(120px)
+    transform: translateX(120px)
+
+/*mega-menu-special-offer-animation img-appear*/
+.slide-in-fwd-center
+  -webkit-animation: slide-in-fwd-center 2s 0.2s both
+  animation: slide-in-fwd-center 2s 0.2s both
+
+@-webkit-keyframes slide-in-fwd-center
+  0%
+    -webkit-transform: translateZ(-200px)
+    transform: translateZ(-200px)
+    opacity: 0
+  100%
+    -webkit-transform: translateZ(0)
+    transform: translateZ(0)
+    opacity: 0.8
+
+@keyframes slide-in-fwd-center
+  0%
+    -webkit-transform: translateZ(-200px)
+    transform: translateZ(-200px)
+    opacity: 0
+  100%
+    -webkit-transform: translateZ(0)
+    transform: translateZ(0)
+    opacity: 0.8
+
+/*mega-menu-special-offer-animation - heart-beat-text*/
+.mega-menu-special-offer:hover .heartbeat
+  -webkit-animation: heartbeat 2s ease-in-out 0.1s 3 both
+  animation: heartbeat 2s ease-in-out 0.1s 3 both
+
+@-webkit-keyframes heartbeat
+  from
+    -webkit-transform: scale(1)
+    transform: scale(1)
+    -webkit-transform-origin: center center
+    transform-origin: center center
+    -webkit-animation-timing-function: ease-out
+    animation-timing-function: ease-out
+  10%
+    -webkit-transform: scale(0.91)
+    transform: scale(0.91)
+    -webkit-animation-timing-function: ease-in
+    animation-timing-function: ease-in
+    color: #f16d7f
+  17%
+    -webkit-transform: scale(0.98)
+    transform: scale(0.98)
+    -webkit-animation-timing-function: ease-out
+    animation-timing-function: ease-out
+    color: #e1e1e1
+  33%
+    -webkit-transform: scale(0.87)
+    transform: scale(0.87)
+    -webkit-animation-timing-function: ease-in
+    animation-timing-function: ease-in
+    color: #f16d7f
+  45%
+    -webkit-transform: scale(1)
+    transform: scale(1)
+    -webkit-animation-timing-function: ease-out
+    animation-timing-function: ease-out
+    color: #e1e1e1
+
+@keyframes heartbeat
+  from
+    -webkit-transform: scale(1)
+    transform: scale(1)
+    -webkit-transform-origin: center center
+    transform-origin: center center
+    -webkit-animation-timing-function: ease-out
+    animation-timing-function: ease-out
+  10%
+    -webkit-transform: scale(0.91)
+    transform: scale(0.91)
+    -webkit-animation-timing-function: ease-in
+    animation-timing-function: ease-in
+    color: #f16d7f
+  17%
+    -webkit-transform: scale(0.98)
+    transform: scale(0.98)
+    -webkit-animation-timing-function: ease-out
+    animation-timing-function: ease-out
+    color: #e1e1e1
+  33%
+    -webkit-transform: scale(0.87)
+    transform: scale(0.87)
+    -webkit-animation-timing-function: ease-in
+    animation-timing-function: ease-in
+    color: #f16d7f
+  45%
+    -webkit-transform: scale(1)
+    transform: scale(1)
+    -webkit-animation-timing-function: ease-out
+    animation-timing-function: ease-out
+    color: #e1e1e1
+
+/*main-promo-goods-effects*/
+.left-small-img,
+.right-small-img,
+.left-big-img,
+.right-big-img
+  position: relative
+
+.left-small-img:before, .left-small-img:after,
+.right-small-img:before, .right-small-img:after,
+.left-big-img:before, .left-big-img:after,
+.right-big-img:before, .right-big-img:after
+  z-index: -1
+  position: absolute
+  content: ""
+  bottom: 15px
+  left: 10px
+  width: 50%
+  top: 80%
+  max-width: 300px
+  background: #777
+  box-shadow: 0 15px 10px #777
+  transform: rotate(-3deg)
+
+.left-small-img:after,
+.right-small-img:after,
+.left-big-img:after,
+.right-big-img:after
+  transform: rotate(3deg)
+  right: 10px
+  left: auto
+
+.left-small-img:hover .promo-goods-text,
+.right-small-img:hover .promo-goods-text,
+.left-big-img:hover .promo-goods-text,
+.right-big-img:hover .promo-goods-text
+  -webkit-animation: promo-goods-text 0.9s 5 both
+  animation: promo-goods-text 0.9s 5 both
+
+@-webkit-keyframes promo-goods-text
+  0%
+    opacity: 1
+  50%
+    opacity: 0.2
+  100%
+    opacity: 1
+
+@keyframes promo-goods-text
+  0%
+    opacity: 1
+  50%
+    opacity: 0.2
+  100%
+    opacity: 1
+
+/* good-to-cart-animation*/
+.good-hover:hover .good-to-cart
+  display: flex
+  animation-delay: 2s
+  -webkit-animation: good-to-cart 1.6s both
+  animation: good-to-cart 1.6s both
+
+@-webkit-keyframes good-to-cart
+  0%
+    -webkit-transform: translateY(45px)
+    transform: translateY(45px)
+    -webkit-animation-timing-function: ease-in
+    animation-timing-function: ease-in
+    opacity: 1
+  24%
+    opacity: 1
+  40%
+    -webkit-transform: translateY(24px)
+    transform: translateY(24px)
+    -webkit-animation-timing-function: ease-in
+    animation-timing-function: ease-in
+  65%
+    -webkit-transform: translateY(12px)
+    transform: translateY(12px)
+    -webkit-animation-timing-function: ease-in
+    animation-timing-function: ease-in
+  82%
+    -webkit-transform: translateY(6px)
+    transform: translateY(6px)
+    -webkit-animation-timing-function: ease-in
+    animation-timing-function: ease-in
+  93%
+    -webkit-transform: translateY(4px)
+    transform: translateY(4px)
+    -webkit-animation-timing-function: ease-in
+    animation-timing-function: ease-in
+  25%,
+  55%,
+  75%,
+  87%
+    -webkit-transform: translateY(0px)
+    transform: translateY(0px)
+    -webkit-animation-timing-function: ease-out
+    animation-timing-function: ease-out
+  100%
+    -webkit-transform: translateY(0px)
+    transform: translateY(0px)
+    -webkit-animation-timing-function: ease-out
+    animation-timing-function: ease-out
+    opacity: 1
+
+@keyframes good-to-cart
+  0%
+    -webkit-transform: translateY(45px)
+    transform: translateY(45px)
+    -webkit-animation-timing-function: ease-in
+    animation-timing-function: ease-in
+    opacity: 1
+  24%
+    opacity: 1
+  40%
+    -webkit-transform: translateY(24px)
+    transform: translateY(24px)
+    -webkit-animation-timing-function: ease-in
+    animation-timing-function: ease-in
+  65%
+    -webkit-transform: translateY(12px)
+    transform: translateY(12px)
+    -webkit-animation-timing-function: ease-in
+    animation-timing-function: ease-in
+  82%
+    -webkit-transform: translateY(6px)
+    transform: translateY(6px)
+    -webkit-animation-timing-function: ease-in
+    animation-timing-function: ease-in
+  93%
+    -webkit-transform: translateY(4px)
+    transform: translateY(4px)
+    -webkit-animation-timing-function: ease-in
+    animation-timing-function: ease-in
+  25%,
+  55%,
+  75%,
+  87%
+    -webkit-transform: translateY(0px)
+    transform: translateY(0px)
+    -webkit-animation-timing-function: ease-out
+    animation-timing-function: ease-out
+  100%
+    -webkit-transform: translateY(0px)
+    transform: translateY(0px)
+    -webkit-animation-timing-function: ease-out
+    animation-timing-function: ease-out
+    opacity: 1
+
+/*main-special-offer*/
+.special-offer-left:hover .text-shadow-drop-left
+  -webkit-animation: text-shadow-drop-left 0.6s both
+  animation: text-shadow-drop-left 0.6s both
+
+@-webkit-keyframes text-shadow-drop-left
+  0%
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0)
+  100%
+    text-shadow: -6px 0 18px rgba(250,245,250,0.68)
+
+@keyframes text-shadow-drop-left
+  0%
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0)
+  100%
+    text-shadow: -6px 0 18px rgba(250,245,250,0.68)
